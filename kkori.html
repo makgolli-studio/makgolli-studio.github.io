@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>KKORI — Makgolli Studio</title>
-<meta name="description" content="KKORI is a bilingual divination app from Makgolli Studio: Liuyao, Plum Blossom Numerology, and Qimen Dunjia readings, plus a daily almanac and cycle tracker.">
+<meta name="description" content="KKORI is a bilingual divination app from Makgolli Studio: Liuyao, Plum Blossom Numerology, and Qimen Dunjia readings, plus a daily almanac and a separate cycle tracker.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -118,8 +118,8 @@
     width: min(300px, 64vw);
     position: relative;
     display: flex;
-    align-items: flex-end;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
   }
   .mascot-frame::before{
     content: "";
@@ -127,6 +127,7 @@
     inset: -12% -6% 2%;
     background: radial-gradient(closest-side, rgba(201,164,99,0.16), transparent 72%);
     border-radius: 50%;
+    z-index: 0;
   }
   .mascot-frame img{
     position: relative;
@@ -134,6 +135,14 @@
     height: auto;
     display: block;
     animation: mascot-breathe 4.5s ease-in-out infinite;
+  }
+  .mascot-caption{
+    position: relative;
+    margin: 10px 0 0;
+    font-size: 0.76rem;
+    letter-spacing: 0.04em;
+    color: var(--paper-dim);
+    text-align: center;
   }
   @keyframes mascot-breathe{
     0%, 100% { transform: translateY(0); }
@@ -252,18 +261,19 @@
       <div>
         <p class="kicker">占卜命理 App &nbsp;&middot;&nbsp; 점술 앱</p>
         <h1>Five old methods of reading a day, in one bilingual app.</h1>
-        <p>KKORI brings together Liuyao coin divination, Plum Blossom Numerology, and Qimen Dunjia compass readings with a daily almanac and cycle tracker &mdash; built for readers of Traditional Chinese and Korean.</p>
+        <p>KKORI brings together Liuyao coin divination, Plum Blossom Numerology, Qimen Dunjia compass readings, and a daily almanac &mdash; plus a separate cycle tracker &mdash; built for readers of Traditional Chinese and Korean.</p>
         <span class="badge"><span class="dot"></span> Coming soon &mdash; currently in testing on Google Play</span>
       </div>
       <div class="mascot-frame">
-        <img src="assets/kkori-mascot-scholar.png" alt="KKORI dressed in a scholar's robe, the outfit tied to the app's divination readings" width="289" height="320" loading="eager">
+        <img src="assets/kkori-mascot-scholar.png" alt="KKORI looking delighted, paws together" width="285" height="254" loading="eager">
+        <p class="mascot-caption">KKORI &mdash; an original character by Makgolli Studio</p>
       </div>
     </div>
   </section>
 
   <section id="readings">
     <div class="wrap">
-      <h2 class="eyebrow-free-heading">Five ways to ask</h2>
+      <h2 class="eyebrow-free-heading">Four ways to ask</h2>
       <p class="section-intro">Each method has its own history and its own way of framing a question. KKORI keeps them separate, rather than flattening them into one generic "fortune" feature.</p>
       <div class="features">
 
@@ -295,13 +305,27 @@
           <p>What a given day favors and what it doesn't, at a glance.</p>
         </div>
 
+      </div>
+    </div>
+  </section>
+
+  <section id="extras">
+    <div class="wrap">
+      <h2 class="eyebrow-free-heading">Also inside</h2>
+      <p class="section-intro">Not every part of KKORI is a reading. Alongside the four divination methods, the app includes a couple of practical, everyday tools &mdash; a calendar and a reminder list, not fortune-telling features.</p>
+      <div class="features">
         <div class="feature">
           <svg viewBox="0 0 40 40" fill="none" stroke="var(--plum)" stroke-width="2.2"><circle cx="20" cy="20" r="15"/><path d="M20 5a15 15 0 0 0 0 30 11 11 0 0 1 0-30Z" fill="var(--plum)" stroke="none" opacity="0.55"/></svg>
           <h3>Cycle Tracker</h3>
           <p class="native"></p>
           <p>A simple calendar for tracking and editing your own cycle.</p>
         </div>
-
+        <div class="feature">
+          <svg viewBox="0 0 40 40" fill="none" stroke="var(--brass)" stroke-width="2.2"><path d="M20 6a9 9 0 0 0-9 9v6l-3 5h24l-3-5v-6a9 9 0 0 0-9-9Z" stroke-linejoin="round"/><path d="M17 30a3 3 0 0 0 6 0" stroke-linecap="round"/></svg>
+          <h3>Reminders</h3>
+          <p class="native"></p>
+          <p>Daily routine alerts &mdash; medication, chores, anything on a schedule.</p>
+        </div>
       </div>
     </div>
   </section>
