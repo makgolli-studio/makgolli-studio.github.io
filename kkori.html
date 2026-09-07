@@ -8,6 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="assets/favicon.png">
 <style>
   :root{
     --ink: #11132a;
@@ -112,12 +113,32 @@
     background: var(--teal);
   }
 
-  .emblem{ justify-self: center; width: min(260px, 60vw); }
-  .emblem .ring{ fill: none; stroke: var(--ink-line); stroke-width: 1; }
-  .emblem .hex{ stroke: var(--brass); stroke-width: 2.4; stroke-linecap: round; }
-  .emblem .hex.broken{ stroke-dasharray: 10 8; }
-  .emblem .coin{ fill: var(--brass); }
-  .emblem .coin-hole{ fill: var(--ink); }
+  .mascot-frame{
+    justify-self: center;
+    width: min(300px, 64vw);
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+  }
+  .mascot-frame::before{
+    content: "";
+    position: absolute;
+    inset: -12% -6% 2%;
+    background: radial-gradient(closest-side, rgba(201,164,99,0.16), transparent 72%);
+    border-radius: 50%;
+  }
+  .mascot-frame img{
+    position: relative;
+    width: 100%;
+    height: auto;
+    display: block;
+    animation: mascot-breathe 4.5s ease-in-out infinite;
+  }
+  @keyframes mascot-breathe{
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+  }
 
   /* ---------- Section shared ---------- */
   section{ padding: 60px 0; border-top: 1px solid var(--ink-line); }
@@ -206,11 +227,12 @@
 
   @media (max-width: 700px){
     .hero .wrap{ grid-template-columns: 1fr; }
-    .emblem{ order: -1; width: 170px; }
+    .mascot-frame{ order: -1; width: 190px; }
   }
 
   @media (prefers-reduced-motion: reduce){
     *{ transition: none !important; scroll-behavior: auto !important; }
+    .mascot-frame img{ animation: none !important; }
   }
 </style>
 </head>
@@ -233,15 +255,9 @@
         <p>KKORI brings together Liuyao coin divination, Plum Blossom Numerology, and Qimen Dunjia compass readings with a daily almanac and cycle tracker &mdash; built for readers of Traditional Chinese and Korean.</p>
         <span class="badge"><span class="dot"></span> Coming soon &mdash; currently in testing on Google Play</span>
       </div>
-      <svg class="emblem" viewBox="0 0 200 200" role="img" aria-label="A coin above three hexagram lines, one of them broken">
-        <circle class="ring" cx="100" cy="100" r="94"/>
-        <circle class="coin" cx="100" cy="62" r="30"/>
-        <rect class="coin-hole" x="88" y="50" width="24" height="24"/>
-        <line class="hex" x1="46" y1="120" x2="154" y2="120"/>
-        <line class="hex" x1="46" y1="144" x2="90" y2="144"/>
-        <line class="hex broken" x1="110" y1="144" x2="154" y2="144"/>
-        <line class="hex" x1="46" y1="168" x2="154" y2="168"/>
-      </svg>
+      <div class="mascot-frame">
+        <img src="assets/kkori-mascot-scholar.png" alt="KKORI dressed in a scholar's robe, the outfit tied to the app's divination readings" width="289" height="320" loading="eager">
+      </div>
     </div>
   </section>
 
