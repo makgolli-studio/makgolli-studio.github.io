@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KKORI — Makgolli Studio</title>
+<meta name="description" content="KKORI is a bilingual divination app from Makgolli Studio: Liuyao, Plum Blossom Numerology, and Qimen Dunjia readings, plus a daily almanac and cycle tracker.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink: #11132a;
+    --ink-soft: #1b1e3f;
+    --ink-line: rgba(243,239,230,0.13);
+    --paper: #f3efe6;
+    --paper-dim: #b3afc4;
+    --brass: #c9a463;
+    --brass-bright: #e7cb8e;
+    --teal: #4f9b90;
+    --plum: #8a5578;
+    --max: 880px;
+  }
+
+  *{ box-sizing: border-box; }
+  html{ scroll-behavior: smooth; }
+
+  body{
+    margin: 0;
+    background: var(--ink);
+    color: var(--paper);
+    font-family: 'Inter', -apple-system, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, .brand{
+    font-family: 'Noto Serif TC', serif;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+  }
+
+  a{ color: inherit; }
+
+  .wrap{
+    max-width: var(--max);
+    margin: 0 auto;
+    padding: 0 28px;
+  }
+
+  /* ---------- Header ---------- */
+  header{ padding: 30px 0 10px; }
+  header .wrap{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+  }
+  .back-link{
+    font-size: 0.85rem;
+    color: var(--paper-dim);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: color 0.2s ease, border-color 0.2s ease;
+  }
+  .back-link:hover, .back-link:focus-visible{
+    color: var(--brass-bright);
+    border-color: var(--brass);
+  }
+  .brand{
+    font-size: 1.1rem;
+    color: var(--paper);
+  }
+
+  /* ---------- Hero ---------- */
+  .hero{ padding: 60px 0 70px; }
+  .hero .wrap{
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    align-items: center;
+    gap: 44px;
+  }
+  .kicker{
+    font-size: 0.85rem;
+    color: var(--brass);
+    margin: 0 0 14px;
+  }
+  .hero h1{
+    font-size: clamp(2.2rem, 5vw, 3.1rem);
+    margin: 0 0 20px;
+  }
+  .hero p{
+    color: var(--paper-dim);
+    font-size: 1.04rem;
+    max-width: 48ch;
+    margin: 0 0 26px;
+  }
+  .badge{
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    border: 1px solid var(--ink-line);
+    border-radius: 999px;
+    padding: 9px 18px;
+    font-size: 0.86rem;
+    color: var(--paper-dim);
+  }
+  .badge .dot{
+    width: 7px; height: 7px;
+    border-radius: 50%;
+    background: var(--teal);
+  }
+
+  .emblem{ justify-self: center; width: min(260px, 60vw); }
+  .emblem .ring{ fill: none; stroke: var(--ink-line); stroke-width: 1; }
+  .emblem .hex{ stroke: var(--brass); stroke-width: 2.4; stroke-linecap: round; }
+  .emblem .hex.broken{ stroke-dasharray: 10 8; }
+  .emblem .coin{ fill: var(--brass); }
+  .emblem .coin-hole{ fill: var(--ink); }
+
+  /* ---------- Section shared ---------- */
+  section{ padding: 60px 0; border-top: 1px solid var(--ink-line); }
+  .eyebrow-free-heading{
+    font-size: clamp(1.4rem, 2.6vw, 1.75rem);
+    margin: 0 0 12px;
+  }
+  .section-intro{
+    color: var(--paper-dim);
+    max-width: 56ch;
+    margin: 0 0 36px;
+  }
+
+  /* ---------- Features ---------- */
+  .features{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    gap: 20px;
+  }
+  .feature{
+    background: var(--ink-soft);
+    border: 1px solid var(--ink-line);
+    border-radius: 4px;
+    padding: 24px 22px;
+  }
+  .feature svg{ width: 40px; height: 40px; margin-bottom: 16px; }
+  .feature h3{
+    font-size: 1.02rem;
+    margin: 0 0 4px;
+  }
+  .feature .native{
+    font-size: 0.78rem;
+    color: var(--brass);
+    font-family: 'Inter', sans-serif;
+    margin: 0 0 10px;
+  }
+  .feature p{
+    font-size: 0.88rem;
+    color: var(--paper-dim);
+    margin: 0;
+  }
+
+  /* ---------- Languages ---------- */
+  .languages{
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+  .lang-card{
+    flex: 1 1 220px;
+    border: 1px solid var(--ink-line);
+    border-radius: 4px;
+    padding: 20px 22px;
+  }
+  .lang-card h3{
+    font-size: 1rem;
+    margin: 0 0 8px;
+  }
+  .lang-card p{
+    font-size: 0.88rem;
+    color: var(--paper-dim);
+    margin: 0;
+  }
+
+  /* ---------- Footer ---------- */
+  footer{
+    border-top: 1px solid var(--ink-line);
+    padding: 30px 0 40px;
+  }
+  footer .wrap{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    font-size: 0.82rem;
+    color: var(--paper-dim);
+  }
+  footer nav{ display: flex; gap: 18px; }
+  footer a{
+    color: var(--paper-dim);
+    text-decoration: none;
+    border-bottom: 1px solid var(--ink-line);
+  }
+  footer a:hover{ color: var(--brass-bright); border-color: var(--brass); }
+
+  @media (max-width: 700px){
+    .hero .wrap{ grid-template-columns: 1fr; }
+    .emblem{ order: -1; width: 170px; }
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *{ transition: none !important; scroll-behavior: auto !important; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="back-link" href="index.html">&larr; Makgolli Studio</a>
+    <span class="brand">KKORI</span>
+  </div>
+</header>
+
+<main>
+
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <p class="kicker">占卜命理 App &nbsp;&middot;&nbsp; 점술 앱</p>
+        <h1>Five old methods of reading a day, in one bilingual app.</h1>
+        <p>KKORI brings together Liuyao coin divination, Plum Blossom Numerology, and Qimen Dunjia compass readings with a daily almanac and cycle tracker &mdash; built for readers of Traditional Chinese and Korean.</p>
+        <span class="badge"><span class="dot"></span> Coming soon &mdash; currently in testing on Google Play</span>
+      </div>
+      <svg class="emblem" viewBox="0 0 200 200" role="img" aria-label="A coin above three hexagram lines, one of them broken">
+        <circle class="ring" cx="100" cy="100" r="94"/>
+        <circle class="coin" cx="100" cy="62" r="30"/>
+        <rect class="coin-hole" x="88" y="50" width="24" height="24"/>
+        <line class="hex" x1="46" y1="120" x2="154" y2="120"/>
+        <line class="hex" x1="46" y1="144" x2="90" y2="144"/>
+        <line class="hex broken" x1="110" y1="144" x2="154" y2="144"/>
+        <line class="hex" x1="46" y1="168" x2="154" y2="168"/>
+      </svg>
+    </div>
+  </section>
+
+  <section id="readings">
+    <div class="wrap">
+      <h2 class="eyebrow-free-heading">Five ways to ask</h2>
+      <p class="section-intro">Each method has its own history and its own way of framing a question. KKORI keeps them separate, rather than flattening them into one generic "fortune" feature.</p>
+      <div class="features">
+
+        <div class="feature">
+          <svg viewBox="0 0 40 40"><line x1="8" y1="14" x2="32" y2="14" stroke="var(--teal)" stroke-width="3" stroke-linecap="round"/><line x1="8" y1="20" x2="17" y2="20" stroke="var(--teal)" stroke-width="3" stroke-linecap="round"/><line x1="23" y1="20" x2="32" y2="20" stroke="var(--teal)" stroke-width="3" stroke-linecap="round"/><line x1="8" y1="26" x2="32" y2="26" stroke="var(--teal)" stroke-width="3" stroke-linecap="round"/></svg>
+          <h3>Liuyao</h3>
+          <p class="native">六爻</p>
+          <p>Coin-toss divination, building a hexagram one throw at a time.</p>
+        </div>
+
+        <div class="feature">
+          <svg viewBox="0 0 40 40" fill="none" stroke="var(--plum)" stroke-width="2.4" stroke-linejoin="round"><circle cx="20" cy="12" r="6"/><circle cx="20" cy="28" r="6"/><circle cx="12" cy="20" r="6"/><circle cx="28" cy="20" r="6"/><circle cx="20" cy="20" r="3" fill="var(--plum)" stroke="none"/></svg>
+          <h3>Plum Blossom Numerology</h3>
+          <p class="native">梅花易數</p>
+          <p>Reading a moment through number, time, and circumstance.</p>
+        </div>
+
+        <div class="feature">
+          <svg viewBox="0 0 40 40" fill="none" stroke="var(--brass)" stroke-width="2.2"><circle cx="20" cy="20" r="17"/><line x1="20" y1="4" x2="20" y2="10"/><line x1="20" y1="30" x2="20" y2="36"/><line x1="4" y1="20" x2="10" y2="20"/><line x1="30" y1="20" x2="36" y2="20"/><line x1="9" y1="9" x2="13" y2="13"/><line x1="27" y1="27" x2="31" y2="31"/><line x1="9" y1="31" x2="13" y2="27"/><line x1="27" y1="13" x2="31" y2="9"/><circle cx="20" cy="20" r="3" fill="var(--brass)" stroke="none"/></svg>
+          <h3>Qimen Dunjia</h3>
+          <p class="native">奇門遁甲</p>
+          <p>A compass reading across the eight directions and 24 mountains.</p>
+        </div>
+
+        <div class="feature">
+          <svg viewBox="0 0 40 40" fill="none" stroke="var(--teal)" stroke-width="2.2"><rect x="6" y="8" width="28" height="26" rx="2"/><line x1="6" y1="16" x2="34" y2="16"/><line x1="13" y1="5" x2="13" y2="11"/><line x1="27" y1="5" x2="27" y2="11"/></svg>
+          <h3>Daily Almanac</h3>
+          <p class="native">流日 &middot; 일진</p>
+          <p>What a given day favors and what it doesn't, at a glance.</p>
+        </div>
+
+        <div class="feature">
+          <svg viewBox="0 0 40 40" fill="none" stroke="var(--plum)" stroke-width="2.2"><circle cx="20" cy="20" r="15"/><path d="M20 5a15 15 0 0 0 0 30 11 11 0 0 1 0-30Z" fill="var(--plum)" stroke="none" opacity="0.55"/></svg>
+          <h3>Cycle Tracker</h3>
+          <p class="native"></p>
+          <p>A simple calendar for tracking and editing your own cycle.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="languages">
+    <div class="wrap">
+      <h2 class="eyebrow-free-heading">Built bilingual</h2>
+      <p class="section-intro">Every reading, term, and result is written natively for each language, not machine-translated from one into the other.</p>
+      <div class="languages">
+        <div class="lang-card">
+          <h3>繁體中文</h3>
+          <p>Traditional Chinese, for readers in Taiwan, Hong Kong, and Macau.</p>
+        </div>
+        <div class="lang-card">
+          <h3>한국어</h3>
+          <p>Korean, with its own terminology for each method of reading.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>&copy; 2026 Makgolli Studio</span>
+    <nav>
+      <a href="index.html">Studio</a>
+      <a href="https://makgolli-studio.github.io/makgolli-studio-privacy/privacy-policy.html">Privacy (中文)</a>
+      <a href="https://makgolli-studio.github.io/makgolli-studio-privacy/privacy-policy.ko.html">개인정보 (한국어)</a>
+    </nav>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Makgolli Studio</title>
+<meta name="description" content="Makgolli Studio is an independent studio making divination and lifestyle apps that carry East Asian tradition into daily use, in Traditional Chinese and Korean.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink: #11132a;
+    --ink-soft: #1b1e3f;
+    --ink-line: rgba(243,239,230,0.13);
+    --paper: #f3efe6;
+    --paper-dim: #b3afc4;
+    --brass: #c9a463;
+    --brass-bright: #e7cb8e;
+    --teal: #4f9b90;
+    --plum: #6b3f60;
+    --max: 880px;
+  }
+
+  *{ box-sizing: border-box; }
+  html{ scroll-behavior: smooth; }
+
+  body{
+    margin: 0;
+    background: var(--ink);
+    color: var(--paper);
+    font-family: 'Inter', -apple-system, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, .brand{
+    font-family: 'Noto Serif TC', serif;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+  }
+
+  a{ color: inherit; }
+
+  .wrap{
+    max-width: var(--max);
+    margin: 0 auto;
+    padding: 0 28px;
+  }
+
+  /* ---------- Header ---------- */
+  header{
+    padding: 30px 0 10px;
+  }
+  header .wrap{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+  }
+  .brand{
+    font-size: 1.15rem;
+    text-decoration: none;
+    color: var(--paper);
+  }
+  .brand small{
+    display: block;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 0.68rem;
+    letter-spacing: 0.14em;
+    color: var(--brass);
+    margin-top: 2px;
+  }
+  nav ul{
+    list-style: none;
+    display: flex;
+    gap: 28px;
+    margin: 0;
+    padding: 0;
+    font-size: 0.92rem;
+  }
+  nav a{
+    text-decoration: none;
+    color: var(--paper-dim);
+    border-bottom: 1px solid transparent;
+    padding-bottom: 3px;
+    transition: color 0.2s ease, border-color 0.2s ease;
+  }
+  nav a:hover, nav a:focus-visible{
+    color: var(--brass-bright);
+    border-color: var(--brass);
+  }
+
+  /* ---------- Hero ---------- */
+  .hero{
+    padding: 72px 0 84px;
+  }
+  .hero .wrap{
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    align-items: center;
+    gap: 48px;
+  }
+  .hero h1{
+    font-size: clamp(2rem, 4.4vw, 2.75rem);
+    line-height: 1.28;
+    margin: 0 0 22px;
+  }
+  .hero p{
+    color: var(--paper-dim);
+    font-size: 1.04rem;
+    max-width: 46ch;
+    margin: 0;
+  }
+  .emblem{
+    justify-self: center;
+    width: min(280px, 62vw);
+  }
+  .emblem circle{ fill: none; }
+  .emblem .ring-outer{ stroke: var(--ink-line); stroke-width: 1; }
+  .emblem .ring-inner{ stroke: var(--brass); stroke-width: 1; opacity: 0.55; }
+  .emblem .tick{ stroke: var(--brass); stroke-width: 1.4; stroke-linecap: round; }
+  .emblem .core{ fill: var(--brass); }
+  .emblem .core-ring{ stroke: var(--brass-bright); stroke-width: 1; fill: none; opacity: 0.7; }
+
+  /* ---------- Section shared ---------- */
+  section{ padding: 64px 0; border-top: 1px solid var(--ink-line); }
+  .eyebrow-free-heading{
+    font-size: clamp(1.4rem, 2.6vw, 1.75rem);
+    margin: 0 0 34px;
+  }
+
+  /* ---------- Work ---------- */
+  .work-card{
+    display: grid;
+    grid-template-columns: 128px 1fr;
+    gap: 28px;
+    align-items: center;
+    background: var(--ink-soft);
+    border: 1px solid var(--ink-line);
+    border-radius: 4px;
+    padding: 28px;
+    text-decoration: none;
+    color: inherit;
+    transition: border-color 0.2s ease, transform 0.2s ease;
+  }
+  .work-card:hover, .work-card:focus-visible{
+    border-color: var(--brass);
+    transform: translateY(-2px);
+  }
+  .work-glyph{
+    width: 100%;
+    aspect-ratio: 1;
+  }
+  .work-glyph .hex-line{ stroke: var(--teal); stroke-width: 3; }
+  .work-glyph .hex-line.broken{ stroke-dasharray: 9 6; }
+  .work-glyph .coin-hole{ fill: var(--ink-soft); }
+  .work-glyph .coin{ fill: var(--brass); }
+  .work-title{
+    font-size: 1.3rem;
+    margin: 0 0 6px;
+  }
+  .work-tag{
+    font-size: 0.8rem;
+    color: var(--brass);
+    margin: 0 0 12px;
+  }
+  .work-desc{
+    color: var(--paper-dim);
+    margin: 0 0 14px;
+    font-size: 0.95rem;
+    max-width: 52ch;
+  }
+  .work-status{
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.82rem;
+    color: var(--paper-dim);
+  }
+  .work-status .dot{
+    width: 7px; height: 7px;
+    border-radius: 50%;
+    background: var(--teal);
+  }
+  .work-link{
+    display: inline-block;
+    margin-top: 16px;
+    font-size: 0.9rem;
+    color: var(--brass-bright);
+  }
+
+  .more-work{
+    margin-top: 20px;
+    color: var(--paper-dim);
+    font-size: 0.9rem;
+    font-style: italic;
+  }
+
+  /* ---------- About ---------- */
+  .about p{
+    color: var(--paper-dim);
+    max-width: 58ch;
+    font-size: 1rem;
+  }
+  .about p + p{ margin-top: 16px; }
+  .about strong{ color: var(--paper); font-weight: 600; }
+
+  .languages{
+    display: flex;
+    gap: 12px;
+    margin-top: 26px;
+    flex-wrap: wrap;
+  }
+  .lang-pill{
+    border: 1px solid var(--ink-line);
+    border-radius: 999px;
+    padding: 7px 16px;
+    font-size: 0.82rem;
+    color: var(--paper-dim);
+  }
+
+  /* ---------- Contact ---------- */
+  .contact p{
+    color: var(--paper-dim);
+    max-width: 50ch;
+  }
+
+  /* ---------- Footer ---------- */
+  footer{
+    border-top: 1px solid var(--ink-line);
+    padding: 30px 0 40px;
+  }
+  footer .wrap{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    font-size: 0.82rem;
+    color: var(--paper-dim);
+  }
+  footer a{
+    color: var(--paper-dim);
+    text-decoration: none;
+    border-bottom: 1px solid var(--ink-line);
+  }
+  footer a:hover{ color: var(--brass-bright); border-color: var(--brass); }
+
+  @media (max-width: 700px){
+    .hero .wrap{ grid-template-columns: 1fr; }
+    .emblem{ order: -1; width: 180px; }
+    .work-card{ grid-template-columns: 1fr; text-align: left; }
+    .work-glyph{ width: 72px; }
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *{ transition: none !important; scroll-behavior: auto !important; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="brand" href="#top">Makgolli Studio<small>MAKGOLLI STUDIO</small></a>
+    <nav>
+      <ul>
+        <li><a href="#work">Work</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <h1>A one-person studio, building one small thing at a time.</h1>
+        <p>Makgolli Studio is currently building KKORI, a bilingual divination app, with a KKORI sticker pack in preparation next. What comes after isn't tied to one category &mdash; this is a studio built around whatever's worth making, not a fixed product line.</p>
+      </div>
+      <svg class="emblem" viewBox="0 0 200 200" role="img" aria-label="A compass emblem with twenty-four divisions, in the style of a traditional luopan">
+        <circle class="ring-outer" cx="100" cy="100" r="92"/>
+        <circle class="ring-inner" cx="100" cy="100" r="70"/>
+        <circle class="core-ring" cx="100" cy="100" r="18"/>
+        <circle class="core" cx="100" cy="100" r="3.5"/>
+        <g>
+          <line class="tick" x1="100" y1="8" x2="100" y2="20" transform="rotate(0 100 100)"/>
+          <line class="tick" x1="100" y1="8" x2="100" y2="20" transform="rotate(15 100 100)"/>
+          <line class="tick" x1="100" y1="8" x2="100" y2="20" transform="rotate(30 100 100)"/>
+          <line class="tick" x1="100" y1="8" x2="100" y2="20" transform="rotate(45 100 100)"/>
+          <line class="tick" x1="100" y1="8" x2="100" y2="20" transform="rotate(60 100 100)"/>
+          <line class="tick" x1="100" y1="8" x2="100" y2="20" transform="rotate(75 100 100)"/>
+          <line class="tick" x1="100" y1="8" x2="100" y2="20" transform="rotate(90 100 100)"/>
+          <line class="tick" x1="100" y1="8" x2="100" y2="20" transform="rotate(105 100 100)"/>
+          <line class="tick" x1="100" y1="8" x2="100" y2="20" transform="rotate(120 100 100)"/>
+          <line class="tick" x1="100" y1="8" x2="100" y2="20" transform="rotate(135 100 100)"/>
+          <line class="tick" x1="100" y1="8" x2="100" y2="20" transform="rotate(150 100 100)"/>
+          <line class="tick" x1="100" y1="8" x2="100" y2="20" transform="rotate(165 100 100)"/>
+          <line class="tick" x1="100" y1="8" x2="100" y2="20" transform="rotate(180 100 100)"/>
+          <line class="tick" x1="100" y1="8" x2="100" y2="20" transform="rotate(195 100 100)"/>
+          <line class="tick" x1="100" y1="8" x2="100" y2="20" transform="rotate(210 100 100)"/>
+          <line class="tick" x1="100" y1="8" x2="100" y2="20" transform="rotate(225 100 100)"/>
+          <line class="tick" x1="100" y1="8" x2="100" y2="20" transform="rotate(240 100 100)"/>
+          <line class="tick" x1="100" y1="8" x2="100" y2="20" transform="rotate(255 100 100)"/>
+          <line class="tick" x1="100" y1="8" x2="100" y2="20" transform="rotate(270 100 100)"/>
+          <line class="tick" x1="100" y1="8" x2="100" y2="20" transform="rotate(285 100 100)"/>
+          <line class="tick" x1="100" y1="8" x2="100" y2="20" transform="rotate(300 100 100)"/>
+          <line class="tick" x1="100" y1="8" x2="100" y2="20" transform="rotate(315 100 100)"/>
+          <line class="tick" x1="100" y1="8" x2="100" y2="20" transform="rotate(330 100 100)"/>
+          <line class="tick" x1="100" y1="8" x2="100" y2="20" transform="rotate(345 100 100)"/>
+        </g>
+      </svg>
+    </div>
+  </section>
+
+  <section id="work">
+    <div class="wrap">
+      <h2 class="eyebrow-free-heading">Current work</h2>
+
+      <a class="work-card" href="kkori.html">
+        <svg class="work-glyph" viewBox="0 0 100 100" role="img" aria-label="A stylised coin and hexagram line motif">
+          <circle class="coin" cx="50" cy="36" r="19"/>
+          <rect class="coin-hole" x="44" y="30" width="12" height="12"/>
+          <line class="hex-line" x1="24" y1="70" x2="76" y2="70"/>
+          <line class="hex-line" x1="24" y1="82" x2="46" y2="82"/>
+          <line class="hex-line broken" x1="54" y1="82" x2="76" y2="82"/>
+        </svg>
+        <div>
+          <p class="work-tag">占卜命理 App &nbsp;&middot;&nbsp; 점술 앱</p>
+          <h3 class="work-title">KKORI</h3>
+          <p class="work-desc">Liuyao coin divination, Plum Blossom Numerology, and Qimen Dunjia compass readings, alongside a daily almanac and cycle tracker &mdash; one bilingual app for the methods people have relied on for centuries.</p>
+          <span class="work-status"><span class="dot"></span> In testing on Google Play</span>
+          <br>
+          <span class="work-link">View KKORI &rarr;</span>
+        </div>
+      </a>
+
+      <p class="more-work">A KKORI sticker pack is next, with more apps and projects to follow as they're ready.</p>
+    </div>
+  </section>
+
+  <section id="about" class="about">
+    <div class="wrap">
+      <h2 class="eyebrow-free-heading">About the studio</h2>
+      <p>Makgolli Studio is a one-person studio &mdash; a side project for an amateur developer working on this outside a day job, named after <strong>막걸리 (makgeolli)</strong>, Korean rice wine and a personal favorite.</p>
+      <p>The current focus is KKORI, a bilingual divination app, with a KKORI sticker pack in preparation. What comes next isn't fixed to one category &mdash; projects here get built as ideas arrive, not to a roadmap.</p>
+      <p>So far, everything made here has been designed <strong>bilingual from the start</strong>, for readers moving between Traditional Chinese and Korean, rather than translated on as an afterthought.</p>
+      <div class="languages">
+        <span class="lang-pill">繁體中文</span>
+        <span class="lang-pill">한국어</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="wrap">
+      <h2 class="eyebrow-free-heading">Get in touch</h2>
+      <p>Contact details are on their way &mdash; check back soon.</p>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>&copy; 2026 Makgolli Studio</span>
+    <a href="https://makgolli-studio.github.io/makgolli-studio-privacy/privacy-policy.html">Privacy Policy</a>
+  </div>
+</footer>
+
+</body>
+</html>
