@@ -107,10 +107,27 @@
     font-size: 0.86rem;
     color: var(--paper-dim);
   }
+  .badge-group{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
   .badge .dot{
     width: 7px; height: 7px;
     border-radius: 50%;
     background: var(--teal);
+  }
+  .badge .dot.dot-live{ background: var(--brass); }
+  .badge-link{
+    text-decoration: none;
+    border-color: var(--brass);
+    color: var(--brass-bright);
+    transition: border-color 0.2s ease, color 0.2s ease;
+  }
+  .badge-link:hover, .badge-link:focus-visible{
+    color: var(--paper);
+    border-color: var(--paper);
   }
 
   .mascot-frame{
@@ -260,12 +277,15 @@
     <div class="wrap">
       <div>
         <p class="kicker">占卜命理 App &nbsp;&middot;&nbsp; 점술 앱</p>
-        <h1>Four old methods of reading a day, in one bilingual app.</h1>
+        <h1>Five old methods of reading a day, in one bilingual app.</h1>
         <p>KKORI brings together Liuyao coin divination, Plum Blossom Numerology, Qimen Dunjia compass readings, and a daily almanac &mdash; plus a separate cycle tracker &mdash; built for readers of Traditional Chinese and Korean.</p>
-        <span class="badge"><span class="dot"></span> Coming soon &mdash; currently in testing on Google Play</span>
+        <div class="badge-group">
+          <span class="badge"><span class="dot"></span> Coming soon &mdash; currently in testing on Google Play</span>
+          <a class="badge badge-link" href="https://store.line.me/stickershop/author/6618095"><span class="dot dot-live"></span> KKORI stickers now on LINE STORE &rarr;</a>
+        </div>
       </div>
       <div class="mascot-frame">
-        <img src="assets/kkori-mascot-scholar.png" alt="KKORI looking delighted, paws together" width="285" height="254" loading="eager">
+        <img src="assets/kkori-mascot-delighted.png" alt="KKORI looking delighted, paws together" width="285" height="254" loading="eager">
         <p class="mascot-caption">KKORI &mdash; an original character by Makgolli Studio</p>
       </div>
     </div>
@@ -301,7 +321,7 @@
         <div class="feature">
           <svg viewBox="0 0 40 40" fill="none" stroke="var(--teal)" stroke-width="2.2"><rect x="6" y="8" width="28" height="26" rx="2"/><line x1="6" y1="16" x2="34" y2="16"/><line x1="13" y1="5" x2="13" y2="11"/><line x1="27" y1="5" x2="27" y2="11"/></svg>
           <h3>Daily Almanac</h3>
-          <p class="native">流日</p>
+          <p class="native">流日 &middot; 일진</p>
           <p>What a given day favors and what it doesn't, at a glance.</p>
         </div>
 
@@ -351,9 +371,10 @@
 
 <footer>
   <div class="wrap">
-    <span>&copy; 2026 Makgolli Studio. All rights reserved.</span>
+    <span>&copy; 2026 Makgolli Studio</span>
     <nav>
       <a href="index.html">Studio</a>
+      <a href="https://store.line.me/stickershop/author/6618095">LINE Stickers</a>
       <a href="https://makgolli-studio.github.io/makgolli-studio-privacy/privacy-policy.html">Privacy (中文)</a>
       <a href="https://makgolli-studio.github.io/makgolli-studio-privacy/privacy-policy.ko.html">개인정보 (한국어)</a>
     </nav>
