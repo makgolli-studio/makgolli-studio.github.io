@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta name="google-site-verification" content="RXZldh5EI_qZjzKBdq91UYGep670wEVtq92VO8Ivunc" />
-</head>
+<meta name="google-site-verification" content="RXZldh5EI_qZjzKBdq91UYGep670wEVtq92VO8Ivunc" />
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Makgolli Studio</title>
@@ -96,6 +95,17 @@
     border-color: var(--brass);
   }
 
+  .inline-link{
+    color: var(--brass-bright);
+    text-decoration: none;
+    border-bottom: 1px solid var(--brass);
+    transition: color 0.2s ease, border-color 0.2s ease;
+  }
+  .inline-link:hover, .inline-link:focus-visible{
+    color: var(--paper);
+    border-color: var(--paper);
+  }
+
   /* ---------- Hero ---------- */
   .hero{
     padding: 72px 0 84px;
@@ -119,12 +129,11 @@
   }
   .mascot-frame{
     justify-self: center;
-    width: min(300px, 66vw);
-    aspect-ratio: 339 / 320;
+    width: min(380px, 78vw);
     position: relative;
     display: flex;
-    align-items: flex-end;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
   }
   .mascot-frame::before{
     content: "";
@@ -132,6 +141,7 @@
     inset: -10% -6% 4%;
     background: radial-gradient(closest-side, rgba(201,164,99,0.16), transparent 72%);
     border-radius: 50%;
+    z-index: 0;
   }
   .mascot-frame img{
     position: relative;
@@ -139,6 +149,14 @@
     height: auto;
     display: block;
     animation: mascot-breathe 4.5s ease-in-out infinite;
+  }
+  .mascot-caption{
+    position: relative;
+    margin: 10px 0 0;
+    font-size: 0.76rem;
+    letter-spacing: 0.04em;
+    color: var(--paper-dim);
+    text-align: center;
   }
   @keyframes mascot-breathe{
     0%, 100% { transform: translateY(0); }
@@ -299,11 +317,12 @@
   <section class="hero">
     <div class="wrap">
       <div>
-        <h1>An one-person studio, building one small thing at a time.</h1>
-        <p>Makgolli Studio is currently building KKORI, a bilingual divination app, with KKORI LINE sticker packs in preparation next. What comes after isn't tied to one category &mdash; this is a studio built around whatever's worth making, not a fixed product line.</p>
+        <h1>A one-person studio, building one small thing at a time.</h1>
+        <p>Makgolli Studio is currently building KKORI &mdash; an original character brought to life as a bilingual divination app, with <a href="https://store.line.me/stickershop/author/6618095" class="inline-link">KKORI sticker packs now on LINE STORE</a>. What comes after isn't tied to one category &mdash; this is a studio built around whatever's worth making, not a fixed product line.</p>
       </div>
       <div class="mascot-frame">
-        <img src="assets/favicon.png" alt="KKORI, the studio's ring-tailed lemur mascot, sitting quietly" width="339" height="320" loading="eager">
+        <img src="assets/favicon.png" alt="KKORI, the studio's ring-tailed lemur mascot" width="256" height="256" loading="eager">
+        <p class="mascot-caption">KKORI &mdash; an original character by Makgolli Studio</p>
       </div>
     </div>
   </section>
@@ -317,14 +336,14 @@
         <div>
           <p class="work-tag">占卜命理 App &nbsp;&middot;&nbsp; 점술 앱</p>
           <h3 class="work-title">KKORI</h3>
-          <p class="work-desc">Liuyao coin divination, Plum Blossom Numerology, and Qimen Dunjia compass readings, alongside a daily almanac and cycle tracker &mdash; one bilingual app for the methods people have relied on for centuries.</p>
+          <p class="work-desc">Liuyao coin divination, Plum Blossom Numerology, and Qimen Dunjia compass readings, plus a daily almanac and a separate cycle tracker &mdash; one bilingual app for the methods people have relied on for centuries.</p>
           <span class="work-status"><span class="dot"></span> In testing on Google Play</span>
           <br>
           <span class="work-link">View KKORI &rarr;</span>
         </div>
       </a>
 
-      <p class="more-work">KKORI sticker packs are coming soon as well, with more apps and projects to follow as they're ready.</p>
+      <p class="more-work"><a href="https://store.line.me/stickershop/author/6618095" class="inline-link">KKORI sticker packs are now on LINE STORE</a>, with more apps and projects to follow as they're ready.</p>
     </div>
   </section>
 
@@ -332,7 +351,8 @@
     <div class="wrap">
       <h2 class="eyebrow-free-heading">About the studio</h2>
       <p>Makgolli Studio is a one-person studio &mdash; a side project for an amateur creator working on this outside a day job, named after <strong>막걸리 (makgeolli)</strong>, Korean rice wine and a personal favorite.</p>
-      <p>The current focus is KKORI, a bilingual divination app, with a KKORI sticker pack in preparation. What comes next isn't fixed to one category &mdash; projects here get built as ideas arrive, not to a roadmap.</p>
+      <p>The current focus is KKORI, an original character of the studio's own design, brought to life as a bilingual divination app &mdash; with <a href="https://store.line.me/stickershop/author/6618095" class="inline-link">KKORI sticker packs now live on LINE STORE</a>. What comes next isn't fixed to one category &mdash; projects here get built as ideas arrive, not to a roadmap.</p>
+      <p>So far, everything made here has been designed <strong>bilingual from the start</strong>, for readers moving between Traditional Chinese and Korean, rather than translated on as an afterthought.</p>
       <div class="languages">
         <span class="lang-pill">繁體中文</span>
         <span class="lang-pill">한국어</span>
@@ -342,8 +362,8 @@
 
   <section id="contact" class="contact">
     <div class="wrap">
-      <h2 class="eyebrow-free-heading">Contact</h2>
-      <p>E-mail: makgolli.studio@gmail.com</p>
+      <h2 class="eyebrow-free-heading">Get in touch</h2>
+      <p>E-mail: <a href="mailto:makgolli.studio@gmail.com" class="inline-link">makgolli.studio@gmail.com</a></p>
     </div>
   </section>
 
@@ -351,7 +371,7 @@
 
 <footer>
   <div class="wrap">
-    <span>&copy; 2026 Makgolli Studio. All rights reserved.</span>
+    <span>&copy; 2026 Makgolli Studio</span>
   </div>
 </footer>
 
