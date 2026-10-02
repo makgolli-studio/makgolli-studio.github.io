@@ -83,12 +83,12 @@
     letter-spacing: 0.14em;
   }
 
-  .hero{ padding: 82px 0 100px; }
+  .hero{ padding: 62px 0 76px; }
   .hero .wrap{
     display: grid;
-    grid-template-columns: 1.12fr 0.88fr;
+    grid-template-columns: 1.2fr 0.8fr;
     align-items: center;
-    gap: 72px;
+    gap: 46px;
   }
   .kicker{
     margin: 0 0 18px;
@@ -98,16 +98,16 @@
     letter-spacing: 0.03em;
   }
   .hero h1{
-    max-width: 12ch;
-    margin: 0 0 25px;
-    font-size: clamp(2.65rem, 5.6vw, 3.75rem);
-    line-height: 1.12;
+    max-width: 20ch;
+    margin: 0 0 20px;
+    font-size: clamp(2.35rem, 4.45vw, 3.15rem);
+    line-height: 1.17;
   }
   .hero p{
-    max-width: 55ch;
-    margin: 0 0 30px;
+    max-width: 58ch;
+    margin: 0 0 24px;
     color: var(--paper-dim);
-    font-size: 1.02rem;
+    font-size: 0.98rem;
   }
   .badge-group{
     display: flex;
@@ -206,15 +206,16 @@
     color: var(--paper-dim);
   }
 
+  #outfits{ padding: 62px 0 68px; }
   #outfits .wrap{ text-align: center; }
-  #outfits .section-intro{ margin-left: auto; margin-right: auto; }
+  #outfits .section-intro{ margin: 0 auto 12px; }
   .outfit-lineup{
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     align-items: end;
-    gap: clamp(24px, 5vw, 72px);
+    gap: clamp(12px, 2vw, 26px);
     width: 100%;
-    margin: 8px auto 0;
+    margin: 0 auto;
   }
   .look-item{
     min-width: 0;
@@ -223,17 +224,17 @@
   }
   .look-image{
     display: block;
-    width: 100%;
-    max-width: 285px;
+    width: 125%;
+    max-width: 400px;
     height: auto;
-    margin: 0 auto;
+    margin: 0 0 0 -12.5%;
     object-fit: contain;
     filter: drop-shadow(0 18px 20px rgba(0,0,0,0.22));
     transition: transform 0.25s ease;
   }
   .look-item:hover .look-image{ transform: translateY(-5px); }
   .look-name{
-    margin-top: 8px;
+    margin-top: 0;
     color: var(--brass-bright);
     font-size: 0.73rem;
     font-weight: 600;
@@ -242,7 +243,7 @@
   }
   .lineup-note{
     max-width: 62ch;
-    margin: 30px auto 0;
+    margin: 12px auto 0;
     color: var(--paper-dim);
     font-size: 0.86rem;
   }
@@ -335,12 +336,14 @@
   @media (max-width: 760px){
     .wrap{ padding: 0 22px; }
     header{ padding-top: 24px; }
-    .hero{ padding: 54px 0 76px; }
+    .hero{ padding: 48px 0 68px; }
     .hero .wrap{ grid-template-columns: 1fr; gap: 38px; }
-    .hero h1{ max-width: 13ch; }
-    .mascot-frame{ order: -1; width: 210px; }
+    .hero h1{ max-width: 20ch; font-size: clamp(2.05rem, 9vw, 2.7rem); }
+    .mascot-frame{ order: 0; width: 210px; }
     section{ padding: 64px 0; }
-    .outfit-lineup{ gap: 10px; }
+    #outfits{ padding: 52px 0 58px; }
+    .outfit-lineup{ gap: 4px; }
+    .look-image{ width: 120%; margin-left: -10%; }
     .look-name{ font-size: 0.64rem; letter-spacing: 0.08em; }
   }
   @media (max-width: 520px){
