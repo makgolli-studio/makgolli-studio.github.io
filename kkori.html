@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>KKORI &mdash; Daily Fortune &amp; Divination | Makgolli Studio</title>
-<meta name="description" content="KKORI &mdash; Daily Fortune &amp; Divination is a bilingual divination app from Makgolli Studio starring the original character KKORI: Liuyao, Plum Blossom Numerology, and Qimen Dunjia readings, plus a daily almanac and a separate cycle tracker.">
+<meta name="description" content="KKORI &mdash; Daily Fortune &amp; Divination is a bilingual divination app from Makgolli Studio, now available on Google Play, with Liuyao, Plum Blossom Numerology, Qimen Dunjia, daily almanac, reminders, and a cycle tracker.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -138,6 +138,17 @@
     color: var(--paper);
     border-color: var(--paper);
   }
+  .store-link{
+    background: var(--brass);
+    border-color: var(--brass);
+    color: var(--ink);
+    font-weight: 600;
+  }
+  .store-link:hover, .store-link:focus-visible{
+    background: var(--brass-bright);
+    border-color: var(--brass-bright);
+    color: var(--ink);
+  }
 
   .mascot-frame{
     justify-self: center;
@@ -216,6 +227,27 @@
     margin: 0;
   }
 
+  /* ---------- Outfit lineup ---------- */
+  .outfit-lineup{
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 18px;
+  }
+  .lineup-image{
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 4px;
+    border: 1px solid var(--ink-line);
+    background: var(--ink-soft);
+  }
+  .lineup-note{
+    color: var(--paper-dim);
+    max-width: 62ch;
+    margin: 0;
+    font-size: 0.92rem;
+  }
+
   /* ---------- Languages ---------- */
   .languages{
     display: flex;
@@ -287,15 +319,26 @@
       <div>
         <p class="kicker">每日運勢與占卜 &nbsp;&middot;&nbsp; 오늘의 운세와 점쾌</p>
         <h1>KKORI's four old methods of reading a day, in one bilingual app.</h1>
-        <p>KKORI brings together Liuyao coin divination, Plum Blossom Numerology, Qimen Dunjia compass readings, and a daily almanac &mdash; plus a separate cycle tracker &mdash; built for readers of Traditional Chinese and Korean.</p>
+        <p>KKORI brings together Liuyao coin divination, Plum Blossom Numerology, Qimen Dunjia compass readings, and a daily almanac &mdash; plus a separate cycle tracker &mdash; built for readers of Traditional Chinese and Korean. Now available on Google Play.</p>
         <div class="badge-group">
-          <span class="badge"><span class="dot"></span> Coming soon &mdash; currently in testing on Google Play</span>
+          <a class="badge badge-link store-link" href="https://play.google.com/store/apps/details?id=app.kkori.companion"><span class="dot"></span> Download on Google Play &rarr;</a>
           <a class="badge badge-link" href="https://store.line.me/stickershop/author/6618095"><span class="dot dot-live"></span> KKORI stickers now on LINE STORE &rarr;</a>
         </div>
       </div>
       <div class="mascot-frame">
         <img src="assets/kkori-mascot-scholar.png" alt="KKORI, thinking about what's ahead." width="285" height="254" loading="eager">
         <p class="mascot-caption">KKORI &mdash; an original character by Makgolli Studio</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="outfits">
+    <div class="wrap">
+      <h2 class="eyebrow-free-heading">KKORI, dressed for the day</h2>
+      <p class="section-intro">The app and sticker projects share the same original character, with different looks for daily fortune, seasonal moods, and small companion moments.</p>
+      <div class="outfit-lineup">
+        <img class="lineup-image" src="assets/kkori-outfit-lineup.jpg" alt="KKORI in base, beret, field jacket, fisher coat, hoodie, overalls, and scholar outfits." width="960" height="328" loading="lazy">
+        <p class="lineup-note">Original KKORI character artwork by Makgolli Studio.</p>
       </div>
     </div>
   </section>
@@ -383,6 +426,7 @@
     <span>&copy; 2026 Makgolli Studio</span>
     <nav>
       <a href="index.html">Studio</a>
+      <a href="https://play.google.com/store/apps/details?id=app.kkori.companion">Google Play</a>
       <a href="https://store.line.me/stickershop/author/6618095">LINE Stickers</a>
       <a href="https://makgolli-studio.github.io/makgolli-studio-privacy/privacy-policy.html">Privacy (中文)</a>
       <a href="https://makgolli-studio.github.io/makgolli-studio-privacy/privacy-policy.ko.html">개인정보 (한국어)</a>

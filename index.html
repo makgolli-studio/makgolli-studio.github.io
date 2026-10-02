@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Makgolli Studio</title>
-<meta name="description" content="Makgolli Studio is an independent studio making divination and lifestyle apps that carry East Asian tradition into daily use, in Traditional Chinese and Korean.">
+<meta name="description" content="Makgolli Studio is an independent studio behind KKORI, a bilingual daily fortune and divination app now available on Google Play, plus original KKORI character projects.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -104,6 +104,43 @@
   .inline-link:hover, .inline-link:focus-visible{
     color: var(--paper);
     border-color: var(--paper);
+  }
+
+  .cta-row{
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex-wrap: wrap;
+    margin-top: 28px;
+  }
+  .primary-cta, .secondary-cta{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    border-radius: 4px;
+    padding: 10px 18px;
+    font-size: 0.92rem;
+    text-decoration: none;
+    transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease;
+  }
+  .primary-cta{
+    background: var(--brass);
+    color: var(--ink);
+    border: 1px solid var(--brass);
+    font-weight: 600;
+  }
+  .primary-cta:hover, .primary-cta:focus-visible{
+    background: var(--brass-bright);
+    border-color: var(--brass-bright);
+  }
+  .secondary-cta{
+    border: 1px solid var(--ink-line);
+    color: var(--paper-dim);
+  }
+  .secondary-cta:hover, .secondary-cta:focus-visible{
+    border-color: var(--brass);
+    color: var(--brass-bright);
   }
 
   /* ---------- Hero ---------- */
@@ -323,7 +360,11 @@
     <div class="wrap">
       <div>
         <h1>A one-person studio, building one small thing at a time.</h1>
-        <p>Makgolli Studio is currently building KKORI, an original character brought to life through <em>KKORI &mdash; Daily Fortune &amp; Divination</em>, a bilingual divination app, and sticker packs now on <a href="https://store.line.me/stickershop/author/6618095" class="inline-link">LINE STORE</a>. What comes next isn't tied to one product &mdash; this is a studio built around whatever's worth making, not a fixed lineup.</p>
+        <p>Makgolli Studio is home to KKORI, an original character now appearing in <em>KKORI &mdash; Daily Fortune &amp; Divination</em>, a bilingual divination app available on Google Play, plus sticker packs on <a href="https://store.line.me/stickershop/author/6618095" class="inline-link">LINE STORE</a>. What comes next isn't tied to one product &mdash; this is a studio built around whatever's worth making, not a fixed lineup.</p>
+        <div class="cta-row">
+          <a class="primary-cta" href="https://play.google.com/store/apps/details?id=app.kkori.companion">Download on Google Play</a>
+          <a class="secondary-cta" href="kkori.html">View KKORI</a>
+        </div>
       </div>
       <div class="mascot-frame">
         <img src="assets/favicon.png" alt="KKORI, the studio's ring-tailed lemur mascot" width="256" height="256" loading="eager">
@@ -343,7 +384,7 @@
           <h3 class="work-title">KKORI</h3>
           <p class="work-native">每日運勢與占卜 &middot; 오늘의 운세와 점쾌</p>
           <p class="work-desc">Liuyao coin divination, Plum Blossom Numerology, and Qimen Dunjia compass readings, plus a daily almanac and a separate cycle tracker &mdash; one bilingual app for the methods people have relied on for centuries.</p>
-          <span class="work-status"><span class="dot"></span> In testing on Google Play</span>
+          <span class="work-status"><span class="dot"></span> Available on Google Play</span>
           <br>
           <span class="work-link">View KKORI &rarr;</span>
         </div>
@@ -357,7 +398,7 @@
     <div class="wrap">
       <h2 class="eyebrow-free-heading">About the studio</h2>
       <p>Makgolli Studio is a one-person studio &mdash; a side project for an amateur creator working on this outside a day job, named after <strong>막걸리 (makgeolli)</strong>, Korean rice wine and a personal favorite.</p>
-      <p>The current focus is KKORI, an original character of the studio's own design, currently appearing in <em>KKORI &mdash; Daily Fortune &amp; Divination</em>, a bilingual divination app. Sticker packs and other side projects aren't limited to KKORI, though &mdash; the studio's <a href="https://store.line.me/stickershop/author/6618095" class="inline-link">LINE STORE</a> page carries whatever else comes out of it too. Nothing here is fixed to one product, or one character.</p>
+      <p>The current focus is KKORI, an original character of the studio's own design, now appearing in <em>KKORI &mdash; Daily Fortune &amp; Divination</em>, a bilingual divination app on Google Play. Sticker packs and other side projects aren't limited to KKORI, though &mdash; the studio's <a href="https://store.line.me/stickershop/author/6618095" class="inline-link">LINE STORE</a> page carries whatever else comes out of it too. Nothing here is fixed to one product, or one character.</p>
       <p>So far, everything made here has been designed <strong>bilingual from the start</strong>, for readers moving between Traditional Chinese and Korean, rather than translated on as an afterthought.</p>
       <div class="languages">
         <span class="lang-pill">繁體中文</span>
