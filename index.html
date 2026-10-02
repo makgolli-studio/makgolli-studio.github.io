@@ -103,25 +103,25 @@
   }
 
   .hero{
-    padding: 88px 0 108px;
+    padding: 68px 0 84px;
   }
   .hero .wrap{
     display: grid;
-    grid-template-columns: 1.08fr 0.92fr;
+    grid-template-columns: 1.12fr 0.88fr;
     align-items: center;
-    gap: 72px;
+    gap: 48px;
   }
   .hero h1{
-    max-width: 14ch;
-    margin: 0 0 26px;
-    font-size: clamp(2.5rem, 5.4vw, 3.55rem);
-    line-height: 1.14;
+    max-width: 19ch;
+    margin: 0 0 24px;
+    font-size: clamp(2.4rem, 4.6vw, 3.1rem);
+    line-height: 1.18;
   }
   .hero p{
-    max-width: 51ch;
+    max-width: 53ch;
     margin: 0;
     color: var(--paper-dim);
-    font-size: 1.03rem;
+    font-size: 1rem;
   }
   .mascot-frame{
     justify-self: center;
@@ -295,16 +295,16 @@
     .wrap{ padding: 0 22px; }
     header{ padding-top: 24px; }
     nav ul{ gap: 18px; font-size: 0.82rem; }
-    .hero{ padding: 54px 0 76px; }
+    .hero{ padding: 48px 0 70px; }
     .hero .wrap{ grid-template-columns: 1fr; gap: 38px; }
-    .hero h1{ max-width: 16ch; }
-    .mascot-frame{ order: -1; width: 210px; }
+    .hero h1{ max-width: 19ch; font-size: clamp(2.05rem, 9vw, 2.65rem); }
+    .mascot-frame{ order: 0; width: 210px; }
     section{ padding: 64px 0; }
     .work-card{ grid-template-columns: 86px 1fr; gap: 22px; padding: 26px; }
   }
   @media (max-width: 500px){
-    header .wrap{ align-items: flex-start; }
-    nav ul{ gap: 13px; }
+    header .wrap{ flex-direction: column; align-items: flex-start; gap: 18px; }
+    nav ul{ gap: 24px; }
     .work-card{ grid-template-columns: 1fr; }
     .work-glyph{ width: 86px; }
   }
@@ -335,7 +335,7 @@
     <div class="wrap">
       <div>
         <h1>A one-person studio, building one small thing at a time.</h1>
-        <p>Makgolli Studio is home to KKORI, an original character appearing in sticker packs on <a href="https://store.line.me/stickershop/author/6618095" class="inline-link">LINE STORE</a> and in the studio's first app, <a href="kkori.html" class="inline-link"><em>KKORI &mdash; Daily Fortune &amp; Divination</em></a>. The bilingual divination app is available on Google Play. What comes next isn't tied to one product or one character &mdash; this is a studio built around whatever's worth making.</p>
+        <p>Meet KKORI, an original character from Makgolli Studio. You'll find KKORI in <a href="https://store.line.me/stickershop/author/6618095" class="inline-link">LINE sticker packs</a> and in our first bilingual app, <a href="kkori.html" class="inline-link"><em>KKORI &mdash; Daily Fortune &amp; Divination</em></a>, now available on Google Play. More ideas will follow.</p>
       </div>
       <div class="mascot-frame">
         <img src="assets/favicon.png" alt="KKORI, the studio's ring-tailed lemur mascot" width="256" height="256" loading="eager">
