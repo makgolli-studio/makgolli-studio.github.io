@@ -11,58 +11,57 @@
 <link rel="icon" type="image/png" href="assets/favicon.png">
 <style>
   :root{
-    --ink: #11132a;
-    --ink-soft: #1b1e3f;
-    --ink-line: rgba(243,239,230,0.13);
-    --paper: #f3efe6;
-    --paper-dim: #b3afc4;
+    --ink: #0b0e24;
+    --ink-soft: #151a37;
+    --ink-raised: #1b2145;
+    --ink-line: rgba(243,239,230,0.14);
+    --paper: #f5f1e8;
+    --paper-dim: #b8b6c9;
     --brass: #c9a463;
-    --brass-bright: #e7cb8e;
-    --teal: #4f9b90;
-    --plum: #8a5578;
-    --max: 880px;
+    --brass-bright: #ead298;
+    --teal: #58a89b;
+    --plum: #9b668a;
+    --max: 1040px;
   }
 
   *{ box-sizing: border-box; }
   html{ scroll-behavior: smooth; }
-
   body{
     margin: 0;
-    background: var(--ink);
+    background:
+      radial-gradient(circle at 78% 8%, rgba(201,164,99,0.11), transparent 28rem),
+      radial-gradient(circle at 12% 36%, rgba(88,168,155,0.055), transparent 24rem),
+      var(--ink);
     color: var(--paper);
     font-family: 'Inter', -apple-system, sans-serif;
     font-size: 16px;
-    line-height: 1.6;
+    line-height: 1.65;
     -webkit-font-smoothing: antialiased;
   }
-
   h1, h2, h3, .brand{
     font-family: 'Noto Serif TC', serif;
     font-weight: 600;
-    letter-spacing: 0.01em;
+    letter-spacing: 0.005em;
   }
-
   a{ color: inherit; }
-
   .wrap{
-    max-width: var(--max);
+    width: min(100%, var(--max));
     margin: 0 auto;
-    padding: 0 28px;
+    padding: 0 32px;
   }
 
-  /* ---------- Header ---------- */
-  header{ padding: 30px 0 10px; }
+  header{ padding: 30px 0 14px; }
   header .wrap{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 16px;
+    gap: 24px;
   }
   .back-link{
-    font-size: 0.85rem;
     color: var(--paper-dim);
     text-decoration: none;
     border-bottom: 1px solid transparent;
+    font-size: 0.84rem;
     transition: color 0.2s ease, border-color 0.2s ease;
   }
   .back-link:hover, .back-link:focus-visible{
@@ -70,89 +69,94 @@
     border-color: var(--brass);
   }
   .brand{
-    font-size: 1.1rem;
     color: var(--paper);
+    font-size: 1.12rem;
+    line-height: 1.2;
   }
   .brand small{
     display: block;
-    font-family: 'Inter', sans-serif;
-    font-weight: 400;
-    font-size: 0.62rem;
-    letter-spacing: 0.12em;
+    margin-top: 5px;
     color: var(--brass);
-    margin-top: 2px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.61rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
   }
 
-  /* ---------- Hero ---------- */
-  .hero{ padding: 60px 0 70px; }
+  .hero{ padding: 82px 0 100px; }
   .hero .wrap{
     display: grid;
-    grid-template-columns: 1.15fr 0.85fr;
+    grid-template-columns: 1.12fr 0.88fr;
     align-items: center;
-    gap: 44px;
+    gap: 72px;
   }
   .kicker{
-    font-size: 0.85rem;
+    margin: 0 0 18px;
     color: var(--brass);
-    margin: 0 0 14px;
+    font-size: 0.82rem;
+    font-weight: 500;
+    letter-spacing: 0.03em;
   }
   .hero h1{
-    font-size: clamp(2.2rem, 5vw, 3.1rem);
-    margin: 0 0 20px;
+    max-width: 12ch;
+    margin: 0 0 25px;
+    font-size: clamp(2.65rem, 5.6vw, 3.75rem);
+    line-height: 1.12;
   }
   .hero p{
+    max-width: 55ch;
+    margin: 0 0 30px;
     color: var(--paper-dim);
-    font-size: 1.04rem;
-    max-width: 48ch;
-    margin: 0 0 26px;
+    font-size: 1.02rem;
+  }
+  .badge-group{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 11px;
   }
   .badge{
     display: inline-flex;
     align-items: center;
     gap: 9px;
+    padding: 10px 18px;
+    color: var(--paper-dim);
     border: 1px solid var(--ink-line);
     border-radius: 999px;
-    padding: 9px 18px;
-    font-size: 0.86rem;
-    color: var(--paper-dim);
-  }
-  .badge-group{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
+    font-size: 0.83rem;
   }
   .badge .dot{
-    width: 7px; height: 7px;
+    width: 7px;
+    height: 7px;
     border-radius: 50%;
     background: var(--teal);
   }
   .badge .dot.dot-live{ background: var(--brass); }
   .badge-link{
     text-decoration: none;
-    border-color: var(--brass);
+    border-color: rgba(201,164,99,0.55);
     color: var(--brass-bright);
-    transition: border-color 0.2s ease, color 0.2s ease;
+    transition: transform 0.2s ease, border-color 0.2s ease, color 0.2s ease;
   }
   .badge-link:hover, .badge-link:focus-visible{
+    transform: translateY(-2px);
     color: var(--paper);
     border-color: var(--paper);
   }
   .store-link{
-    background: var(--brass);
-    border-color: var(--brass);
     color: var(--ink);
+    border-color: var(--brass);
+    background: var(--brass);
     font-weight: 600;
   }
   .store-link:hover, .store-link:focus-visible{
-    background: var(--brass-bright);
-    border-color: var(--brass-bright);
     color: var(--ink);
+    border-color: var(--brass-bright);
+    background: var(--brass-bright);
   }
-
   .mascot-frame{
     justify-self: center;
-    width: min(300px, 64vw);
+    width: min(330px, 68vw);
     position: relative;
     display: flex;
     flex-direction: column;
@@ -161,24 +165,25 @@
   .mascot-frame::before{
     content: "";
     position: absolute;
-    inset: -12% -6% 2%;
-    background: radial-gradient(closest-side, rgba(201,164,99,0.16), transparent 72%);
-    border-radius: 50%;
+    inset: -13% -8% 1%;
     z-index: 0;
+    border-radius: 50%;
+    background: radial-gradient(closest-side, rgba(201,164,99,0.2), transparent 70%);
   }
   .mascot-frame img{
     position: relative;
     width: 100%;
     height: auto;
     display: block;
+    filter: drop-shadow(0 22px 32px rgba(0,0,0,0.22));
     animation: mascot-breathe 4.5s ease-in-out infinite;
   }
   .mascot-caption{
     position: relative;
-    margin: 10px 0 0;
-    font-size: 0.76rem;
-    letter-spacing: 0.04em;
+    margin: 13px 0 0;
     color: var(--paper-dim);
+    font-size: 0.75rem;
+    letter-spacing: 0.05em;
     text-align: center;
   }
   @keyframes mascot-breathe{
@@ -186,105 +191,140 @@
     50% { transform: translateY(-5px); }
   }
 
-  /* ---------- Section shared ---------- */
-  section{ padding: 60px 0; border-top: 1px solid var(--ink-line); }
+  section{
+    padding: 84px 0;
+    border-top: 1px solid var(--ink-line);
+  }
   .eyebrow-free-heading{
-    font-size: clamp(1.4rem, 2.6vw, 1.75rem);
-    margin: 0 0 12px;
+    margin: 0 0 14px;
+    font-size: clamp(1.7rem, 3vw, 2.1rem);
+    line-height: 1.25;
   }
   .section-intro{
+    max-width: 61ch;
+    margin: 0 0 42px;
     color: var(--paper-dim);
-    max-width: 56ch;
-    margin: 0 0 36px;
   }
 
-  /* ---------- Features ---------- */
-  .features{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
-    gap: 20px;
-  }
-  .feature{
-    background: var(--ink-soft);
-    border: 1px solid var(--ink-line);
-    border-radius: 4px;
-    padding: 24px 22px;
-  }
-  .feature svg{ width: 40px; height: 40px; margin-bottom: 16px; }
-  .feature h3{
-    font-size: 1.02rem;
-    margin: 0 0 4px;
-  }
-  .feature .native{
-    font-size: 0.78rem;
-    color: var(--brass);
-    font-family: 'Inter', sans-serif;
-    margin: 0 0 10px;
-  }
-  .feature p{
-    font-size: 0.88rem;
-    color: var(--paper-dim);
-    margin: 0;
-  }
-
-  /* ---------- Outfit lineup ---------- */
+  #outfits .wrap{ text-align: center; }
+  #outfits .section-intro{ margin-left: auto; margin-right: auto; }
   .outfit-lineup{
     display: grid;
-    grid-template-columns: minmax(0, 1fr);
-    gap: 18px;
-  }
-  .lineup-image{
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: end;
+    gap: clamp(24px, 5vw, 72px);
     width: 100%;
-    height: auto;
+    margin: 8px auto 0;
+  }
+  .look-item{
+    min-width: 0;
+    margin: 0;
+    text-align: center;
+  }
+  .look-image{
     display: block;
-    border-radius: 4px;
-    border: 1px solid var(--ink-line);
-    background: var(--ink-soft);
+    width: 100%;
+    max-width: 285px;
+    height: auto;
+    margin: 0 auto;
+    object-fit: contain;
+    filter: drop-shadow(0 18px 20px rgba(0,0,0,0.22));
+    transition: transform 0.25s ease;
+  }
+  .look-item:hover .look-image{ transform: translateY(-5px); }
+  .look-name{
+    margin-top: 8px;
+    color: var(--brass-bright);
+    font-size: 0.73rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
   }
   .lineup-note{
-    color: var(--paper-dim);
     max-width: 62ch;
-    margin: 0;
-    font-size: 0.92rem;
+    margin: 30px auto 0;
+    color: var(--paper-dim);
+    font-size: 0.86rem;
   }
 
-  /* ---------- Languages ---------- */
+  .features{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(205px, 1fr));
+    gap: 18px;
+  }
+  .feature{
+    min-height: 100%;
+    padding: 28px 25px;
+    border: 1px solid var(--ink-line);
+    border-radius: 18px;
+    background: linear-gradient(145deg, rgba(27,33,69,0.92), rgba(18,22,48,0.94));
+    box-shadow: inset 0 1px rgba(255,255,255,0.025);
+    transition: transform 0.2s ease, border-color 0.2s ease;
+  }
+  .feature:hover{
+    transform: translateY(-3px);
+    border-color: rgba(201,164,99,0.45);
+  }
+  .feature svg{
+    width: 42px;
+    height: 42px;
+    margin-bottom: 20px;
+  }
+  .feature h3{
+    margin: 0 0 5px;
+    font-size: 1.05rem;
+  }
+  .feature .native{
+    margin: 0 0 12px;
+    color: var(--brass);
+    font-family: 'Inter', sans-serif;
+    font-size: 0.77rem;
+  }
+  .feature p{
+    margin: 0;
+    color: var(--paper-dim);
+    font-size: 0.88rem;
+  }
+
   .languages{
-    display: flex;
-    gap: 14px;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
   }
   .lang-card{
-    flex: 1 1 220px;
+    padding: 24px 26px;
     border: 1px solid var(--ink-line);
-    border-radius: 4px;
-    padding: 20px 22px;
+    border-radius: 16px;
+    background: rgba(255,255,255,0.025);
   }
   .lang-card h3{
-    font-size: 1rem;
     margin: 0 0 8px;
+    font-size: 1.05rem;
   }
   .lang-card p{
-    font-size: 0.88rem;
-    color: var(--paper-dim);
     margin: 0;
+    color: var(--paper-dim);
+    font-size: 0.88rem;
   }
 
-  /* ---------- Footer ---------- */
   footer{
+    padding: 32px 0 42px;
     border-top: 1px solid var(--ink-line);
-    padding: 30px 0 40px;
   }
   footer .wrap{
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    gap: 12px;
-    font-size: 0.82rem;
+    gap: 16px;
     color: var(--paper-dim);
+    font-size: 0.8rem;
   }
-  footer nav{ display: flex; gap: 18px; }
+  footer nav{
+    display: flex;
+    gap: 18px;
+    flex-wrap: wrap;
+  }
   footer a{
     color: var(--paper-dim);
     text-decoration: none;
@@ -292,11 +332,25 @@
   }
   footer a:hover{ color: var(--brass-bright); border-color: var(--brass); }
 
-  @media (max-width: 700px){
-    .hero .wrap{ grid-template-columns: 1fr; }
-    .mascot-frame{ order: -1; width: 190px; }
+  @media (max-width: 760px){
+    .wrap{ padding: 0 22px; }
+    header{ padding-top: 24px; }
+    .hero{ padding: 54px 0 76px; }
+    .hero .wrap{ grid-template-columns: 1fr; gap: 38px; }
+    .hero h1{ max-width: 13ch; }
+    .mascot-frame{ order: -1; width: 210px; }
+    section{ padding: 64px 0; }
+    .outfit-lineup{ gap: 10px; }
+    .look-name{ font-size: 0.64rem; letter-spacing: 0.08em; }
   }
-
+  @media (max-width: 520px){
+    header .wrap{ align-items: flex-start; }
+    .brand{ text-align: right; }
+    .badge-group{ align-items: flex-start; flex-direction: column; }
+    .features{ grid-template-columns: 1fr; }
+    .languages{ grid-template-columns: 1fr; }
+    footer nav{ gap: 12px; }
+  }
   @media (prefers-reduced-motion: reduce){
     *{ transition: none !important; scroll-behavior: auto !important; }
     .mascot-frame img{ animation: none !important; }
@@ -337,9 +391,20 @@
       <h2 class="eyebrow-free-heading">Three KKORI looks, currently in the app</h2>
       <p class="section-intro">The app currently includes the original base look, overalls, and the scholar outfit.</p>
       <div class="outfit-lineup">
-        <img class="lineup-image" src="assets/kkori-outfit-lineup.jpg" alt="KKORI in the three outfits currently available in the app: base, overalls, and scholar." width="960" height="182" loading="lazy">
-        <p class="lineup-note">Original KKORI character artwork by Makgolli Studio.</p>
+        <figure class="look-item">
+          <img class="look-image" src="assets/kkori-look-base-v2.png" alt="KKORI in the original base look." width="800" height="455" loading="lazy">
+          <figcaption class="look-name">Original</figcaption>
+        </figure>
+        <figure class="look-item">
+          <img class="look-image" src="assets/kkori-look-overalls-v2.png" alt="KKORI wearing blue overalls." width="800" height="455" loading="lazy">
+          <figcaption class="look-name">Overalls</figcaption>
+        </figure>
+        <figure class="look-item">
+          <img class="look-image" src="assets/kkori-look-scholar-v2.png" alt="KKORI wearing the scholar outfit." width="800" height="455" loading="lazy">
+          <figcaption class="look-name">Scholar</figcaption>
+        </figure>
       </div>
+      <p class="lineup-note">Original KKORI character artwork by Makgolli Studio.</p>
     </div>
   </section>
 
