@@ -8,100 +8,10 @@
 <meta name="description" content="Makgolli Studio creates original character projects, including KKORI sticker packs and KKORI — Daily Fortune & Divination, its first bilingual Android app. The studio also offers Korean ↔ Traditional Chinese translation and localization.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
 <link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="stylesheet" href="assets/studio.css">
 <style>
-  :root{
-    --ink: #0b0e24;
-    --ink-soft: #151a37;
-    --ink-raised: #1b2145;
-    --ink-line: rgba(243,239,230,0.14);
-    --paper: #f5f1e8;
-    --paper-dim: #b8b6c9;
-    --brass: #c9a463;
-    --brass-bright: #ead298;
-    --teal: #58a89b;
-    --max: 1040px;
-  }
-
-  *{ box-sizing: border-box; }
-  html{ scroll-behavior: smooth; }
-  body{
-    margin: 0;
-    background:
-      radial-gradient(circle at 78% 8%, rgba(201,164,99,0.11), transparent 28rem),
-      radial-gradient(circle at 12% 34%, rgba(88,168,155,0.06), transparent 24rem),
-      var(--ink);
-    color: var(--paper);
-    font-family: 'Inter', -apple-system, sans-serif;
-    font-size: 16px;
-    line-height: 1.65;
-    -webkit-font-smoothing: antialiased;
-  }
-  h1, h2, h3, .brand{
-    font-family: 'Noto Serif TC', serif;
-    font-weight: 600;
-    letter-spacing: 0.005em;
-  }
-  a{ color: inherit; }
-  .wrap{
-    width: min(100%, var(--max));
-    margin: 0 auto;
-    padding: 0 32px;
-  }
-
-  header{ padding: 32px 0 14px; }
-  header .wrap{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 24px;
-  }
-  .brand{
-    font-size: 1.18rem;
-    line-height: 1.2;
-    text-decoration: none;
-    color: var(--paper);
-  }
-  .brand small{
-    display: block;
-    margin-top: 5px;
-    color: var(--brass);
-    font-family: 'Inter', sans-serif;
-    font-size: 0.66rem;
-    font-weight: 500;
-    letter-spacing: 0.16em;
-  }
-  nav ul{
-    display: flex;
-    gap: 30px;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    font-size: 0.9rem;
-  }
-  nav a{
-    color: var(--paper-dim);
-    text-decoration: none;
-    border-bottom: 1px solid transparent;
-    padding-bottom: 4px;
-    transition: color 0.2s ease, border-color 0.2s ease;
-  }
-  nav a:hover, nav a:focus-visible{
-    color: var(--brass-bright);
-    border-color: var(--brass);
-  }
-  .inline-link{
-    color: var(--brass-bright);
-    text-decoration: none;
-    border-bottom: 1px solid rgba(201,164,99,0.58);
-    transition: color 0.2s ease, border-color 0.2s ease;
-  }
-  .inline-link:hover, .inline-link:focus-visible{
-    color: var(--paper);
-    border-color: var(--paper);
-  }
-
   .hero{
     padding: 68px 0 84px;
   }
@@ -114,8 +24,6 @@
   .hero h1{
     max-width: 19ch;
     margin: 0 0 24px;
-    font-size: clamp(2.4rem, 4.6vw, 3.1rem);
-    line-height: 1.18;
   }
   .hero p{
     max-width: 53ch;
@@ -158,16 +66,6 @@
   @keyframes mascot-breathe{
     0%, 100% { transform: translateY(0); }
     50% { transform: translateY(-5px); }
-  }
-
-  section{
-    padding: 84px 0;
-    border-top: 1px solid var(--ink-line);
-  }
-  .eyebrow-free-heading{
-    margin: 0 0 36px;
-    font-size: clamp(1.65rem, 3vw, 2.05rem);
-    line-height: 1.25;
   }
 
   .work-card{
@@ -248,7 +146,6 @@
     font-size: 0.9rem;
   }
 
-  .about .wrap, .contact .wrap{ max-width: 820px; }
   .about p, .contact p{
     max-width: 66ch;
     color: var(--paper-dim);
@@ -256,82 +153,24 @@
   }
   .about p + p{ margin-top: 18px; }
   .about strong{ color: var(--paper); font-weight: 600; }
-  .languages{
-    display: flex;
-    gap: 12px;
-    margin-top: 28px;
-    flex-wrap: wrap;
-  }
-  .lang-pill{
-    padding: 7px 16px;
-    color: var(--paper-dim);
-    border: 1px solid var(--ink-line);
-    border-radius: 999px;
-    background: rgba(255,255,255,0.025);
-    font-size: 0.82rem;
-  }
 
-  footer{
-    padding: 32px 0 42px;
-    border-top: 1px solid var(--ink-line);
-  }
-  footer .wrap{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 12px;
-    color: var(--paper-dim);
-    font-size: 0.82rem;
-  }
-  footer a{
-    color: var(--paper-dim);
-    text-decoration: none;
-    border-bottom: 1px solid var(--ink-line);
-  }
-  footer a:hover{ color: var(--brass-bright); border-color: var(--brass); }
-
+  .hero p + p{ margin-top: 18px; }
+  .language-summary h2{ margin-bottom: 20px; }
+  .language-pair{ margin: 0; color: var(--brass-bright); font-size: 1rem; }
+  .summary-copy{ color: var(--paper-dim); margin: 0 0 18px; }
+  .summary-link{ display: inline-block; margin-top: 6px; }
+  .about p, .contact p{ margin: 0 0 18px; }
+  .about p:last-child, .contact p:last-child{ margin-bottom: 0; }
+  .contact a{ overflow-wrap: anywhere; }
   @media (max-width: 760px){
-    .wrap{ padding: 0 22px; }
-    header{ padding-top: 24px; }
-    nav ul{ gap: 18px; font-size: 0.82rem; }
-    .hero{ padding: 48px 0 70px; }
+    .hero{ padding: 48px 0 64px; }
     .hero .wrap{ grid-template-columns: 1fr; gap: 38px; }
-    .hero h1{ max-width: 19ch; font-size: clamp(2.05rem, 9vw, 2.65rem); }
-    .mascot-frame{ order: 0; width: 210px; }
-    section{ padding: 64px 0; }
+    .mascot-frame{ width: 210px; }
     .work-card{ grid-template-columns: 86px 1fr; gap: 22px; padding: 26px; }
   }
   @media (max-width: 500px){
-    header .wrap{ flex-direction: column; align-items: flex-start; gap: 18px; }
-    nav ul{ gap: 24px; }
     .work-card{ grid-template-columns: 1fr; }
     .work-glyph{ width: 86px; }
-  }
-  @media (prefers-reduced-motion: reduce){
-    *{ transition: none !important; scroll-behavior: auto !important; }
-    .mascot-frame img{ animation: none !important; }
-  }
-
-  .skip-link{ position: absolute; top: 8px; left: 22px; padding: 8px 14px; background: var(--paper); color: var(--ink); z-index: 10; transform: translateY(-160%); }
-  .skip-link:focus{ transform: translateY(0); }
-  a:focus-visible{ outline: 2px solid var(--brass-bright); outline-offset: 6px; }
-  nav ul{ flex-wrap: wrap; column-gap: 22px; row-gap: 14px; }
-  .section-label{ margin: 0 0 14px; color: var(--brass); font-size: .72rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; }
-  .language-summary{ display: grid; grid-template-columns: 1fr 1.15fr; gap: 54px; align-items: start; }
-  .language-summary h2{ margin-bottom: 20px; }
-  .language-pair{ color: var(--brass-bright); font-size: 1rem; }
-  .language-summary p{ margin: 0 0 18px; }
-  .language-summary .summary-copy{ color: var(--paper-dim); }
-  .language-summary .summary-link{ display: inline-block; margin-top: 6px; }
-  .contact .contact-context{ margin: -16px 0 22px; }
-  .contact a{ overflow-wrap: anywhere; }
-  @media (max-width: 900px){
-    header .wrap{ flex-direction: column; align-items: flex-start; gap: 22px; }
-  }
-  @media (max-width: 760px){
-    .language-summary{ grid-template-columns: 1fr; gap: 20px; }
-    nav ul{ column-gap: 20px; row-gap: 14px; }
   }
 
 </style>
@@ -341,8 +180,8 @@
 
 <header>
   <div class="wrap">
-    <a class="brand" href="#top">Makgolli Studio<small>MAKGOLLI STUDIO</small></a>
-    <nav aria-label="Main navigation">
+    <a class="brand" href="index.html">Makgolli Studio<small>MAKGOLLI STUDIO</small></a>
+    <nav class="site-nav" aria-label="Main navigation">
       <ul>
         <li><a href="#work">Work</a></li>
         <li><a href="language-localization.html">Language &amp; Localization</a></li>
@@ -358,9 +197,9 @@
   <section class="hero">
     <div class="wrap">
       <div>
-        <h1>A one-person studio for language and original ideas.</h1>
+        <h1 class="page-title">A one-person studio for language and original ideas.</h1>
         <p>Meet KKORI, an original character from Makgolli Studio. You'll find KKORI in <a href="https://store.line.me/stickershop/author/6618095" class="inline-link">LINE sticker packs</a> and in our first bilingual app, <a href="kkori.html" class="inline-link"><em>KKORI &mdash; Daily Fortune &amp; Divination</em></a>, now available on Google Play.</p>
-        <p style="margin-top: 18px">The studio also offers Korean &harr; Traditional Chinese translation and localization.</p>
+        <p>The studio also offers Korean &harr; Traditional Chinese translation and localization.</p>
       </div>
       <div class="mascot-frame">
         <img src="assets/favicon.png" alt="KKORI, the studio's ring-tailed lemur mascot" width="256" height="256" loading="eager">
@@ -391,7 +230,7 @@
   </section>
 
   <section id="language" aria-labelledby="language-heading">
-    <div class="wrap language-summary">
+    <div class="wrap section-layout language-summary">
       <div>
         <p class="section-label">Language services</p>
         <h2 id="language-heading" class="eyebrow-free-heading">Language &amp; Localization</h2>
@@ -405,23 +244,23 @@
   </section>
 
   <section id="about" class="about">
-    <div class="wrap">
+    <div class="wrap section-layout">
       <h2 class="eyebrow-free-heading">About the studio</h2>
-      <p>Makgolli Studio is a one-person creative studio offering original projects and language services. Its name comes from <strong>막걸리 (makgeolli)</strong>, Korean rice wine and a personal favorite.</p>
-      <p>Its original work includes KKORI, a character of the studio's own design. The studio's first app, <a href="kkori.html" class="inline-link"><em>KKORI &mdash; Daily Fortune &amp; Divination</em></a>, is available on Google Play. KKORI sticker packs are available through the studio's <a href="https://store.line.me/stickershop/author/6618095" class="inline-link">LINE STORE</a> page, while future apps and side projects may feature other ideas or characters.</p>
-      <p>The studio's own projects are designed <strong>bilingual from the start</strong>, for readers moving between Traditional Chinese and Korean.</p>
-      <div class="languages">
-        <span class="lang-pill">繁體中文</span>
-        <span class="lang-pill">한국어</span>
+      <div>
+        <p>Makgolli Studio is a one-person creative studio offering original projects and language services. Its name comes from <strong>막걸리 (makgeolli)</strong>, Korean rice wine and a personal favorite.</p>
+        <p>Original work includes KKORI, a character appearing in LINE sticker packs and the studio's first Android app. Future projects may explore other ideas and characters.</p>
+        <p>The studio's own projects are designed <strong>bilingual from the start</strong>, for readers moving between Traditional Chinese and Korean.</p>
       </div>
     </div>
   </section>
 
   <section id="contact" class="contact">
-    <div class="wrap">
+    <div class="wrap section-layout">
       <h2 class="eyebrow-free-heading">Get in touch</h2>
-      <p class="contact-context">For language projects, collaborations, or questions about the studio’s work.</p>
-      <p>E-mail: <a href="mailto:makgolli.studio@gmail.com" class="inline-link">makgolli.studio@gmail.com</a></p>
+      <div>
+        <p class="contact-context">For language projects, collaborations, or questions about the studio’s work.</p>
+        <p>E-mail: <a href="mailto:makgolli.studio@gmail.com" class="inline-link">makgolli.studio@gmail.com</a></p>
+      </div>
     </div>
   </section>
 
@@ -430,7 +269,6 @@
 <footer>
   <div class="wrap">
     <span>&copy; 2026 Makgolli Studio</span>
-    <a href="language-localization.html">Language &amp; Localization</a>
   </div>
 </footer>
 

@@ -7,82 +7,10 @@
 <meta name="description" content="KKORI &mdash; Daily Fortune &amp; Divination is a bilingual divination app from Makgolli Studio, now available on Google Play, with Liuyao, Plum Blossom Numerology, Qimen Dunjia, daily almanac, reminders, and a cycle tracker.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
 <link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="stylesheet" href="assets/studio.css">
 <style>
-  :root{
-    --ink: #0b0e24;
-    --ink-soft: #151a37;
-    --ink-raised: #1b2145;
-    --ink-line: rgba(243,239,230,0.14);
-    --paper: #f5f1e8;
-    --paper-dim: #b8b6c9;
-    --brass: #c9a463;
-    --brass-bright: #ead298;
-    --teal: #58a89b;
-    --plum: #9b668a;
-    --max: 1040px;
-  }
-
-  *{ box-sizing: border-box; }
-  html{ scroll-behavior: smooth; }
-  body{
-    margin: 0;
-    background:
-      radial-gradient(circle at 78% 8%, rgba(201,164,99,0.11), transparent 28rem),
-      radial-gradient(circle at 12% 36%, rgba(88,168,155,0.055), transparent 24rem),
-      var(--ink);
-    color: var(--paper);
-    font-family: 'Inter', -apple-system, sans-serif;
-    font-size: 16px;
-    line-height: 1.65;
-    -webkit-font-smoothing: antialiased;
-  }
-  h1, h2, h3, .brand{
-    font-family: 'Noto Serif TC', serif;
-    font-weight: 600;
-    letter-spacing: 0.005em;
-  }
-  a{ color: inherit; }
-  .wrap{
-    width: min(100%, var(--max));
-    margin: 0 auto;
-    padding: 0 32px;
-  }
-
-  header{ padding: 30px 0 14px; }
-  header .wrap{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 24px;
-  }
-  .back-link{
-    color: var(--paper-dim);
-    text-decoration: none;
-    border-bottom: 1px solid transparent;
-    font-size: 0.84rem;
-    transition: color 0.2s ease, border-color 0.2s ease;
-  }
-  .back-link:hover, .back-link:focus-visible{
-    color: var(--brass-bright);
-    border-color: var(--brass);
-  }
-  .brand{
-    color: var(--paper);
-    font-size: 1.12rem;
-    line-height: 1.2;
-  }
-  .brand small{
-    display: block;
-    margin-top: 5px;
-    color: var(--brass);
-    font-family: 'Inter', sans-serif;
-    font-size: 0.61rem;
-    font-weight: 500;
-    letter-spacing: 0.14em;
-  }
-
   .hero{ padding: 62px 0 76px; }
   .hero .wrap{
     display: grid;
@@ -100,8 +28,6 @@
   .hero h1{
     max-width: 20ch;
     margin: 0 0 20px;
-    font-size: clamp(2.35rem, 4.45vw, 3.15rem);
-    line-height: 1.17;
   }
   .hero p{
     max-width: 58ch;
@@ -115,45 +41,8 @@
     flex-wrap: wrap;
     gap: 11px;
   }
-  .badge{
-    display: inline-flex;
-    align-items: center;
-    gap: 9px;
-    padding: 10px 18px;
-    color: var(--paper-dim);
-    border: 1px solid var(--ink-line);
-    border-radius: 999px;
-    font-size: 0.83rem;
-  }
-  .badge .dot{
-    width: 7px;
-    height: 7px;
-    border-radius: 50%;
-    background: var(--teal);
-  }
-  .badge .dot.dot-live{ background: var(--brass); }
-  .badge-link{
-    text-decoration: none;
-    border-color: rgba(201,164,99,0.55);
-    color: var(--brass-bright);
-    transition: transform 0.2s ease, border-color 0.2s ease, color 0.2s ease;
-  }
-  .badge-link:hover, .badge-link:focus-visible{
-    transform: translateY(-2px);
-    color: var(--paper);
-    border-color: var(--paper);
-  }
-  .store-link{
-    color: var(--ink);
-    border-color: var(--brass);
-    background: var(--brass);
-    font-weight: 600;
-  }
-  .store-link:hover, .store-link:focus-visible{
-    color: var(--ink);
-    border-color: var(--brass-bright);
-    background: var(--brass-bright);
-  }
+  .badge-group .dot{ width: 7px; height: 7px; border-radius: 50%; background: var(--teal); flex-shrink: 0; }
+  .badge-group .dot-live{ background: var(--brass); }
   .mascot-frame{
     justify-self: center;
     width: min(330px, 68vw);
@@ -191,15 +80,6 @@
     50% { transform: translateY(-5px); }
   }
 
-  section{
-    padding: 84px 0;
-    border-top: 1px solid var(--ink-line);
-  }
-  .eyebrow-free-heading{
-    margin: 0 0 14px;
-    font-size: clamp(1.7rem, 3vw, 2.1rem);
-    line-height: 1.25;
-  }
   .section-intro{
     max-width: 61ch;
     margin: 0 0 42px;
@@ -308,78 +188,51 @@
     font-size: 0.88rem;
   }
 
-  footer{
-    padding: 32px 0 42px;
-    border-top: 1px solid var(--ink-line);
-  }
-  footer .wrap{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 16px;
-    color: var(--paper-dim);
-    font-size: 0.8rem;
-  }
-  footer nav{
-    display: flex;
-    gap: 18px;
-    flex-wrap: wrap;
-  }
-  footer a{
-    color: var(--paper-dim);
-    text-decoration: none;
-    border-bottom: 1px solid var(--ink-line);
-  }
-  footer a:hover{ color: var(--brass-bright); border-color: var(--brass); }
 
   @media (max-width: 760px){
-    .wrap{ padding: 0 22px; }
-    header{ padding-top: 24px; }
-    .hero{ padding: 48px 0 68px; }
+    .hero{ padding: 48px 0 64px; }
     .hero .wrap{ grid-template-columns: 1fr; gap: 38px; }
-    .hero h1{ max-width: 20ch; font-size: clamp(2.05rem, 9vw, 2.7rem); }
-    .mascot-frame{ order: 0; width: 210px; }
-    section{ padding: 64px 0; }
+    .mascot-frame{ width: 210px; }
     #outfits{ padding: 52px 0 58px; }
     .outfit-lineup{ gap: 4px; }
     .look-image{ width: 120%; margin-left: -10%; }
-    .look-name{ font-size: 0.64rem; letter-spacing: 0.08em; }
+    .look-name{ font-size: .64rem; letter-spacing: .08em; }
   }
   @media (max-width: 520px){
-    header .wrap{ align-items: flex-start; }
-    .brand{ text-align: right; }
     .badge-group{ align-items: flex-start; flex-direction: column; }
-    .features{ grid-template-columns: 1fr; }
-    .languages{ grid-template-columns: 1fr; }
-    footer nav{ gap: 12px; }
+    .features, .languages{ grid-template-columns: 1fr; }
   }
-  @media (prefers-reduced-motion: reduce){
-    *{ transition: none !important; scroll-behavior: auto !important; }
-    .mascot-frame img{ animation: none !important; }
-  }
+
 </style>
 </head>
 <body>
+<a class="skip-link" href="#main">Skip to content</a>
 
 <header>
   <div class="wrap">
-    <a class="back-link" href="index.html">&larr; Makgolli Studio</a>
-    <span class="brand">KKORI<small>DAILY FORTUNE &amp; DIVINATION</small></span>
+    <a class="brand" href="index.html">Makgolli Studio<small>MAKGOLLI STUDIO</small></a>
+    <nav class="site-nav" aria-label="Main navigation">
+      <ul>
+        <li><a href="index.html#work">Work</a></li>
+        <li><a href="language-localization.html">Language &amp; Localization</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
   </div>
 </header>
 
-<main>
+<main id="main">
 
   <section class="hero">
     <div class="wrap">
       <div>
         <p class="kicker">每日運勢與占卜 &nbsp;&middot;&nbsp; 오늘의 운세와 점쾌</p>
-        <h1>Four ways to read the day.</h1>
+        <h1 class="page-title">Four ways to read the day.</h1>
         <p><em>KKORI &mdash; Daily Fortune &amp; Divination</em> brings Liuyao, Plum Blossom Numerology, Qimen Dunjia, and the daily almanac together in Traditional Chinese and Korean. It also includes a cycle tracker and reminders. Now available on Google Play.</p>
         <div class="badge-group">
-          <a class="badge badge-link store-link" href="https://play.google.com/store/apps/details?id=app.kkori.companion"><span class="dot"></span> Download on Google Play &rarr;</a>
-          <a class="badge badge-link" href="https://store.line.me/stickershop/author/6618095"><span class="dot dot-live"></span> KKORI stickers now on LINE STORE &rarr;</a>
+          <a class="button button-primary" href="https://play.google.com/store/apps/details?id=app.kkori.companion"><span class="dot"></span> Download on Google Play &rarr;</a>
+          <a class="button button-secondary" href="https://store.line.me/stickershop/author/6618095"><span class="dot dot-live"></span> KKORI stickers now on LINE STORE &rarr;</a>
         </div>
       </div>
       <div class="mascot-frame">
@@ -492,11 +345,7 @@
 <footer>
   <div class="wrap">
     <span>&copy; 2026 Makgolli Studio</span>
-    <nav>
-      <a href="index.html">Studio</a>
-      <a href="language-localization.html">Language &amp; Localization</a>
-      <a href="https://play.google.com/store/apps/details?id=app.kkori.companion">KKORI App on Google Play</a>
-      <a href="https://store.line.me/stickershop/author/6618095">LINE Stickers</a>
+    <nav class="footer-links" aria-label="App privacy policies">
       <a href="https://makgolli-studio.github.io/makgolli-studio-privacy/privacy-policy.html">Privacy (中文)</a>
       <a href="https://makgolli-studio.github.io/makgolli-studio-privacy/privacy-policy.ko.html">개인정보 (한국어)</a>
     </nav>
