@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Language &amp; Localization | Makgolli Studio</title>
+<meta name="description" content="Korean ↔ Traditional Chinese translation, localization, editing, linguistic review, and linguistic QA from Makgolli Studio, informed by experience across games, web, marketing, media, and business content.">
+<link rel="canonical" href="https://makgolli-studio.github.io/language-localization.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<style>
+  :root{
+    --ink: #0b0e24;
+    --ink-soft: #151a37;
+    --ink-raised: #1b2145;
+    --ink-line: rgba(243,239,230,0.14);
+    --paper: #f5f1e8;
+    --paper-dim: #b8b6c9;
+    --brass: #c9a463;
+    --brass-bright: #ead298;
+    --teal: #58a89b;
+    --max: 1040px;
+  }
+
+  *{ box-sizing: border-box; }
+  html{ scroll-behavior: smooth; }
+  body{
+    margin: 0;
+    background:
+      radial-gradient(circle at 78% 8%, rgba(201,164,99,0.11), transparent 28rem),
+      radial-gradient(circle at 12% 34%, rgba(88,168,155,0.06), transparent 24rem),
+      var(--ink);
+    color: var(--paper);
+    font-family: 'Inter', -apple-system, sans-serif;
+    font-size: 16px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3, .brand{
+    font-family: 'Noto Serif TC', serif;
+    font-weight: 600;
+    letter-spacing: 0.005em;
+  }
+  a{ color: inherit; }
+  .wrap{
+    width: min(100%, var(--max));
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+
+  header{ padding: 32px 0 14px; }
+  header .wrap{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+  }
+  .brand{
+    font-size: 1.18rem;
+    line-height: 1.2;
+    text-decoration: none;
+    color: var(--paper);
+  }
+  .brand small{
+    display: block;
+    margin-top: 5px;
+    color: var(--brass);
+    font-family: 'Inter', sans-serif;
+    font-size: 0.66rem;
+    font-weight: 500;
+    letter-spacing: 0.16em;
+  }
+  nav ul{
+    display: flex;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-size: 0.9rem;
+  }
+  nav a{
+    color: var(--paper-dim);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    padding-bottom: 4px;
+    transition: color 0.2s ease, border-color 0.2s ease;
+  }
+  nav a:hover, nav a:focus-visible{
+    color: var(--brass-bright);
+    border-color: var(--brass);
+  }
+  .inline-link{
+    color: var(--brass-bright);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(201,164,99,0.58);
+    transition: color 0.2s ease, border-color 0.2s ease;
+  }
+  .inline-link:hover, .inline-link:focus-visible{
+    color: var(--paper);
+    border-color: var(--paper);
+  }
+
+  section{
+    padding: 84px 0;
+    border-top: 1px solid var(--ink-line);
+  }
+  .eyebrow-free-heading{
+    margin: 0 0 36px;
+    font-size: clamp(1.65rem, 3vw, 2.05rem);
+    line-height: 1.25;
+  }
+
+  footer{
+    padding: 32px 0 42px;
+    border-top: 1px solid var(--ink-line);
+  }
+  footer .wrap{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    color: var(--paper-dim);
+    font-size: 0.82rem;
+  }
+  footer a{
+    color: var(--paper-dim);
+    text-decoration: none;
+    border-bottom: 1px solid var(--ink-line);
+  }
+  footer a:hover{ color: var(--brass-bright); border-color: var(--brass); }
+
+
+  .skip-link{ position: absolute; top: 8px; left: 22px; padding: 8px 14px; background: var(--paper); color: var(--ink); z-index: 10; transform: translateY(-160%); }
+  .skip-link:focus{ transform: translateY(0); }
+  a:focus-visible{ outline: 2px solid var(--brass-bright); outline-offset: 6px; }
+  nav ul{ flex-wrap: wrap; column-gap: 22px; row-gap: 14px; }
+  .section-label{ margin: 0 0 14px; color: var(--brass); font-size: .72rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; }
+  @media (max-width: 900px){ header .wrap{ flex-direction: column; align-items: flex-start; gap: 22px; } }
+  @media (max-width: 760px){ .wrap{ padding: 0 22px; } header{ padding-top: 24px; } nav ul{ column-gap: 20px; row-gap: 14px; font-size: .82rem; } }
+  @media (prefers-reduced-motion: reduce){ *{ transition: none !important; scroll-behavior: auto !important; } }
+  .service-hero{ padding: 64px 0 70px; }
+  .service-hero h1{ margin: 0 0 26px; max-width: 20ch; font-size: clamp(2.35rem, 4.4vw, 3.15rem); line-height: 1.18; }
+  .hero-language-pair{ margin: 0 0 22px; font-size: clamp(1.1rem, 2.4vw, 1.35rem); color: var(--brass-bright); }
+  .service-hero .intro{ max-width: 64ch; margin: 0 0 26px; color: var(--paper-dim); }
+  .service-action{ display: inline-block; padding: 11px 20px; border-radius: 999px; background: var(--brass); color: var(--ink); text-decoration: none; font-size: .88rem; font-weight: 600; }
+  .service-action:hover{ background: var(--brass-bright); }
+  .service-section{ padding: 64px 0; }
+  .section-layout{ display: grid; grid-template-columns: .75fr 1.35fr; gap: 54px; }
+  .section-layout .eyebrow-free-heading{ margin-bottom: 16px; }
+  .section-note{ margin: 0; color: var(--paper-dim); font-size: .9rem; }
+  .service-list{ margin: 0; }
+  .service-row{ padding: 22px 0; border-top: 1px solid var(--ink-line); }
+  .service-row:first-child{ padding-top: 0; border-top: 0; }
+  .service-row:last-child{ padding-bottom: 0; }
+  .service-list dt{ margin: 0 0 8px; color: var(--paper); font-weight: 500; }
+  .service-list dd{ margin: 0; color: var(--paper-dim); font-size: .94rem; }
+  .areas{ list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 30px 28px; }
+  .areas li{ border-top: 1px solid var(--ink-line); padding-top: 17px; }
+  .areas h3{ font-size: 1.03rem; margin: 0 0 8px; line-height: 1.4; }
+  .areas p{ font-size: .9rem; color: var(--paper-dim); margin: 0; }
+  .background-copy{ color: var(--paper-dim); margin: 0 0 24px; }
+  .qualifications{ list-style: none; padding: 22px 25px; margin: 0; border: 1px solid var(--ink-line); border-radius: 16px; background: rgba(255,255,255,.025); }
+  .qualifications li + li{ margin-top: 14px; }
+  .obtained{ color: var(--paper-dim); font-size: .85rem; }
+  .language-contact{ padding: 64px 0; }
+  .language-contact p{ color: var(--paper-dim); margin: 0 0 20px; }
+  .language-contact .email{ font-size: clamp(1rem, 2.5vw, 1.2rem); overflow-wrap: anywhere; }
+  .language-contact .brief-note{ max-width: 58ch; margin: 24px 0 0; font-size: .9rem; }
+  nav a[aria-current="page"]{ color: var(--brass-bright); border-color: var(--brass); }
+  @media (max-width: 760px){
+    .service-hero{ padding: 48px 0 54px; }
+    .service-hero h1{ font-size: clamp(2.05rem, 8vw, 2.65rem); }
+    .service-section, .language-contact{ padding: 52px 0; }
+    .section-layout{ grid-template-columns: 1fr; gap: 28px; }
+    .section-layout .eyebrow-free-heading{ margin-bottom: 12px; }
+  }
+  @media (max-width: 500px){ .areas{ grid-template-columns: 1fr; gap: 22px; } .qualifications{ padding: 20px; } }
+
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header>
+  <div class="wrap">
+    <a class="brand" href="index.html">Makgolli Studio<small>MAKGOLLI STUDIO</small></a>
+    <nav aria-label="Main navigation">
+      <ul>
+        <li><a href="index.html#work">Work</a></li>
+        <li><a href="language-localization.html" aria-current="page">Language &amp; Localization</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<main id="main">
+  <section class="service-hero" aria-labelledby="page-heading">
+    <div class="wrap">
+      <p class="section-label">Language services</p>
+      <h1 id="page-heading">Language &amp; Localization</h1>
+      <p class="hero-language-pair">Korean &harr; Traditional Chinese</p>
+      <p class="intro">Makgolli Studio offers translation and localization between Korean and Traditional Chinese, alongside editing, linguistic review, and linguistic QA. The work considers meaning, tone, terminology, and the context in which a text will be read or used.</p>
+      <a class="service-action" href="#contact">Discuss a language project &rarr;</a>
+    </div>
+  </section>
+  <section id="services" class="service-section" aria-labelledby="services-heading">
+    <div class="wrap section-layout">
+      <div>
+        <h2 id="services-heading" class="eyebrow-free-heading">Services</h2>
+        <p class="section-note">Support for new translations and existing language content.</p>
+      </div>
+      <dl class="service-list">
+        <div class="service-row">
+          <dt>Translation &amp; Localization</dt>
+          <dd>Translating meaning and adapting wording to the intended audience, tone, and format.</dd>
+        </div>
+        <div class="service-row">
+          <dt>Editing &amp; Linguistic Review</dt>
+          <dd>Refining existing text for clarity and natural expression, and reviewing translations for accuracy, terminology, and consistency.</dd>
+        </div>
+        <div class="service-row">
+          <dt>Linguistic QA</dt>
+          <dd>Checking language in context for wording issues, inconsistencies, and how text fits its intended use.</dd>
+        </div>
+      </dl>
+    </div>
+  </section>
+  <section id="experience" class="service-section" aria-labelledby="experience-heading">
+    <div class="wrap section-layout">
+      <div>
+        <h2 id="experience-heading" class="eyebrow-free-heading">Areas of experience</h2>
+        <p class="section-note">Content areas covered through prior professional work.</p>
+      </div>
+      <ul class="areas">
+        <li>
+          <h3>Games &amp; Interactive Content</h3>
+          <p>Game localization and game-related content.</p>
+        </li>
+        <li>
+          <h3>Web &amp; Digital Content</h3>
+          <p>Website, app, and digital product content.</p>
+        </li>
+        <li>
+          <h3>Marketing &amp; Advertising</h3>
+          <p>Marketing copy, advertising content, and promotional materials.</p>
+        </li>
+        <li>
+          <h3>Film &amp; Media</h3>
+          <p>Film- and media-related content.</p>
+        </li>
+        <li>
+          <h3>Commercial &amp; Business Content</h3>
+          <p>Business communication and commercial documents.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+  <section id="background" class="service-section" aria-labelledby="background-heading">
+    <div class="wrap section-layout">
+      <div>
+        <h2 id="background-heading" class="eyebrow-free-heading">Background / Qualifications</h2>
+      </div>
+      <div>
+        <p class="background-copy">The language professional behind Makgolli Studio brings experience gained through in-house roles, freelance work, and projects delivered through language-service providers. This experience forms the foundation of the studio’s current language services.</p>
+        <ul class="qualifications">
+          <li>M.A. in Korean Linguistics</li>
+          <li>ITT Business Translation &mdash; Level 1 <span class="obtained">(obtained Nov. 2025)</span></li>
+          <li>ITT Business Interpretation &mdash; Level 1 <span class="obtained">(obtained Nov. 2025)</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  <section id="contact" class="language-contact" aria-labelledby="contact-heading">
+    <div class="wrap section-layout">
+      <div>
+        <h2 id="contact-heading" class="eyebrow-free-heading">Discuss a language project</h2>
+      </div>
+      <div>
+        <p>Contact Makgolli Studio with a brief outline of your project.</p>
+        <a class="inline-link email" href="mailto:makgolli.studio@gmail.com?subject=Language%20%26%20Localization%20Inquiry">makgolli.studio@gmail.com</a>
+        <p class="brief-note">Helpful details include the language direction, content type, approximate length, and preferred deadline.</p>
+      </div>
+    </div>
+  </section>
+</main>
+<footer>
+  <div class="wrap">
+    <span>&copy; 2026 Makgolli Studio</span>
+    <a href="index.html">Back to the studio &rarr;</a>
+  </div>
+</footer>
+</body>
+</html>

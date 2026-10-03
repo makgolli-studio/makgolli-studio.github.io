@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Makgolli Studio</title>
-<meta name="description" content="Makgolli Studio creates original character projects, including KKORI sticker packs and KKORI — Daily Fortune & Divination, its first bilingual Android app.">
+<meta name="description" content="Makgolli Studio creates original character projects, including KKORI sticker packs and KKORI — Daily Fortune & Divination, its first bilingual Android app. The studio also offers Korean ↔ Traditional Chinese translation and localization.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -312,16 +312,40 @@
     *{ transition: none !important; scroll-behavior: auto !important; }
     .mascot-frame img{ animation: none !important; }
   }
+
+  .skip-link{ position: absolute; top: 8px; left: 22px; padding: 8px 14px; background: var(--paper); color: var(--ink); z-index: 10; transform: translateY(-160%); }
+  .skip-link:focus{ transform: translateY(0); }
+  a:focus-visible{ outline: 2px solid var(--brass-bright); outline-offset: 6px; }
+  nav ul{ flex-wrap: wrap; column-gap: 22px; row-gap: 14px; }
+  .section-label{ margin: 0 0 14px; color: var(--brass); font-size: .72rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; }
+  .language-summary{ display: grid; grid-template-columns: 1fr 1.15fr; gap: 54px; align-items: start; }
+  .language-summary h2{ margin-bottom: 20px; }
+  .language-pair{ color: var(--brass-bright); font-size: 1rem; }
+  .language-summary p{ margin: 0 0 18px; }
+  .language-summary .summary-copy{ color: var(--paper-dim); }
+  .language-summary .summary-link{ display: inline-block; margin-top: 6px; }
+  .contact .contact-context{ margin: -16px 0 22px; }
+  .contact a{ overflow-wrap: anywhere; }
+  @media (max-width: 900px){
+    header .wrap{ flex-direction: column; align-items: flex-start; gap: 22px; }
+  }
+  @media (max-width: 760px){
+    .language-summary{ grid-template-columns: 1fr; gap: 20px; }
+    nav ul{ column-gap: 20px; row-gap: 14px; }
+  }
+
 </style>
 </head>
 <body>
+<a class="skip-link" href="#top">Skip to content</a>
 
 <header>
   <div class="wrap">
     <a class="brand" href="#top">Makgolli Studio<small>MAKGOLLI STUDIO</small></a>
-    <nav>
+    <nav aria-label="Main navigation">
       <ul>
         <li><a href="#work">Work</a></li>
+        <li><a href="language-localization.html">Language &amp; Localization</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
@@ -334,8 +358,9 @@
   <section class="hero">
     <div class="wrap">
       <div>
-        <h1>A one-person studio, building one small thing at a time.</h1>
-        <p>Meet KKORI, an original character from Makgolli Studio. You'll find KKORI in <a href="https://store.line.me/stickershop/author/6618095" class="inline-link">LINE sticker packs</a> and in our first bilingual app, <a href="kkori.html" class="inline-link"><em>KKORI &mdash; Daily Fortune &amp; Divination</em></a>, now available on Google Play. More ideas will follow.</p>
+        <h1>A one-person studio for language and original ideas.</h1>
+        <p>Meet KKORI, an original character from Makgolli Studio. You'll find KKORI in <a href="https://store.line.me/stickershop/author/6618095" class="inline-link">LINE sticker packs</a> and in our first bilingual app, <a href="kkori.html" class="inline-link"><em>KKORI &mdash; Daily Fortune &amp; Divination</em></a>, now available on Google Play.</p>
+        <p style="margin-top: 18px">The studio also offers Korean &harr; Traditional Chinese translation and localization.</p>
       </div>
       <div class="mascot-frame">
         <img src="assets/favicon.png" alt="KKORI, the studio's ring-tailed lemur mascot" width="256" height="256" loading="eager">
@@ -365,12 +390,26 @@
     </div>
   </section>
 
+  <section id="language" aria-labelledby="language-heading">
+    <div class="wrap language-summary">
+      <div>
+        <p class="section-label">Language services</p>
+        <h2 id="language-heading" class="eyebrow-free-heading">Language &amp; Localization</h2>
+        <p class="language-pair">Korean &harr; Traditional Chinese</p>
+      </div>
+      <div>
+        <p class="summary-copy">Translation, localization, editing, linguistic review, and linguistic QA, drawing on professional experience across games, web, marketing, media, and business content.</p>
+        <a class="inline-link summary-link" href="language-localization.html">Explore language services &rarr;</a>
+      </div>
+    </div>
+  </section>
+
   <section id="about" class="about">
     <div class="wrap">
       <h2 class="eyebrow-free-heading">About the studio</h2>
-      <p>Makgolli Studio is a one-person studio &mdash; a side project for an amateur creator working on this outside a day job, named after <strong>막걸리 (makgeolli)</strong>, Korean rice wine and a personal favorite.</p>
-      <p>The current focus is KKORI, an original character of the studio's own design. The studio's first app, <a href="kkori.html" class="inline-link"><em>KKORI &mdash; Daily Fortune &amp; Divination</em></a>, is available on Google Play. KKORI sticker packs are available through the studio's <a href="https://store.line.me/stickershop/author/6618095" class="inline-link">LINE STORE</a> page, while future apps and side projects may feature other ideas or characters.</p>
-      <p>So far, everything made here has been designed <strong>bilingual from the start</strong>, for readers moving between Traditional Chinese and Korean, rather than translated on as an afterthought.</p>
+      <p>Makgolli Studio is a one-person creative studio offering original projects and language services. Its name comes from <strong>막걸리 (makgeolli)</strong>, Korean rice wine and a personal favorite.</p>
+      <p>Its original work includes KKORI, a character of the studio's own design. The studio's first app, <a href="kkori.html" class="inline-link"><em>KKORI &mdash; Daily Fortune &amp; Divination</em></a>, is available on Google Play. KKORI sticker packs are available through the studio's <a href="https://store.line.me/stickershop/author/6618095" class="inline-link">LINE STORE</a> page, while future apps and side projects may feature other ideas or characters.</p>
+      <p>The studio's own projects are designed <strong>bilingual from the start</strong>, for readers moving between Traditional Chinese and Korean.</p>
       <div class="languages">
         <span class="lang-pill">繁體中文</span>
         <span class="lang-pill">한국어</span>
@@ -381,6 +420,7 @@
   <section id="contact" class="contact">
     <div class="wrap">
       <h2 class="eyebrow-free-heading">Get in touch</h2>
+      <p class="contact-context">For language projects, collaborations, or questions about the studio’s work.</p>
       <p>E-mail: <a href="mailto:makgolli.studio@gmail.com" class="inline-link">makgolli.studio@gmail.com</a></p>
     </div>
   </section>
@@ -390,6 +430,7 @@
 <footer>
   <div class="wrap">
     <span>&copy; 2026 Makgolli Studio</span>
+    <a href="language-localization.html">Language &amp; Localization</a>
   </div>
 </footer>
 
