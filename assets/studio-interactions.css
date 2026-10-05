@@ -1,0 +1,42 @@
+/* Small accents shared by the studio pages. Content stays visible without JS. */
+.site-nav a { position: relative; border-bottom-color: transparent !important; }
+.site-nav a::after {
+  content: ""; position: absolute; inset: auto 0 0; height: 1px;
+  background: var(--brass); transform: scaleX(0); transform-origin: left;
+  transition: transform .22s ease;
+}
+.site-nav a:hover::after, .site-nav a:focus-visible::after,
+.site-nav a[aria-current="page"]::after { transform: scaleX(1); }
+.button {
+  transition: color .2s ease, background .2s ease, border-color .2s ease,
+    transform .2s ease, box-shadow .2s ease;
+}
+.button:hover, .button:focus-visible {
+  transform: translateY(-2px); box-shadow: 0 8px 24px rgba(201,164,99,.15);
+}
+.button:active { transform: translateY(0); }
+.work-card, .feature { position: relative; isolation: isolate; }
+.work-card::before, .feature::before {
+  content: ""; position: absolute; inset: 0; border-radius: inherit;
+  z-index: -1; pointer-events: none; opacity: 0;
+  background: radial-gradient(240px circle at var(--accent-x, 50%) var(--accent-y, 50%), rgba(201,164,99,.12), transparent 72%);
+  transition: opacity .25s ease;
+}
+.work-card:hover::before, .work-card:focus-visible::before,
+.feature:hover::before { opacity: 1; }
+.mascot-frame img {
+  rotate: var(--mascot-lean, 0deg); transform-origin: 50% 80%;
+  transition: rotate .3s ease;
+}
+/* These three characters keep their common baseline even on hover. */
+.look-item:hover .look-image { transform: none; }
+.look-image { transition: filter .25s ease; }
+.look-item:hover .look-image { filter: drop-shadow(0 14px 22px rgba(201,164,99,.18)); }
+@media (hover: none) {
+  .button:hover, .work-card:hover, .feature:hover { transform: none; box-shadow: none; }
+  .work-card:hover::before, .feature:hover::before { opacity: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .button:hover, .button:focus-visible, .work-card:hover, .feature:hover { transform: none; }
+  .mascot-frame img { rotate: none; }
+}
