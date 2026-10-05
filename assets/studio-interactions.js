@@ -5,6 +5,8 @@
   const animations = new Set();
   const mascots = document.querySelectorAll('.mascot-frame');
   let observer;
+  let lookObserver;
+  const lookAnimations = new WeakMap();
 
   function enter(element) {
     if (reducedMotion.matches || typeof element.animate !== 'function') return;
@@ -61,9 +63,51 @@
     mascot.addEventListener('pointerleave', () => mascot.style.removeProperty('--mascot-lean'));
   });
 
+
+  function wiggle(image, delay = 0) {
+    if (reducedMotion.matches || typeof image.animate !== 'function') return;
+    lookAnimations.get(image)?.cancel();
+    const animation = image.animate([
+      { transform: 'rotate(0deg) scale(1, 1)', offset: 0 },
+      { transform: 'rotate(-2deg) scale(1.01, .99)', offset: .22 },
+      { transform: 'rotate(2deg) scale(.99, 1.01)', offset: .48 },
+      { transform: 'rotate(-1deg) scale(1.005, .995)', offset: .72 },
+      { transform: 'rotate(0deg) scale(1, 1)', offset: 1 }
+    ], { duration: 1100, delay, easing: 'ease-in-out' });
+    lookAnimations.set(image, animation);
+    animations.add(animation);
+    animation.onfinish = animation.oncancel = () => {
+      animations.delete(animation);
+      if (lookAnimations.get(image) === animation) lookAnimations.delete(image);
+    };
+  }
+
+  const previews = document.querySelectorAll('.look-preview');
+  previews.forEach(preview => {
+    const image = preview.querySelector('.look-image');
+    if (!image) return;
+    preview.addEventListener('click', () => wiggle(image));
+    preview.addEventListener('pointerenter', () => {
+      if (finePointer.matches) wiggle(image);
+    });
+  });
+
+  if (!reducedMotion.matches && 'IntersectionObserver' in window && previews.length) {
+    lookObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        const index = Array.from(previews).indexOf(entry.target);
+        wiggle(entry.target.querySelector('.look-image'), index * 160);
+        lookObserver.unobserve(entry.target);
+      });
+    }, { threshold: .6 });
+    previews.forEach(preview => lookObserver.observe(preview));
+  }
+
   reducedMotion.addEventListener('change', () => {
     if (!reducedMotion.matches) return;
     observer?.disconnect();
+    lookObserver?.disconnect();
     animations.forEach(animation => animation.cancel());
     mascots.forEach(mascot => mascot.style.removeProperty('--mascot-lean'));
   });

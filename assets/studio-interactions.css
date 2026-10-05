@@ -28,7 +28,15 @@
   rotate: var(--mascot-lean, 0deg); transform-origin: 50% 80%;
   transition: rotate .3s ease;
 }
-/* These three characters keep their common baseline even on hover. */
+/* Seated motion is anchored near the feet; the lineup itself never moves. */
+.look-preview {
+  display: block; width: 100%; padding: 0; border: 0; background: transparent;
+  color: inherit; cursor: pointer; -webkit-tap-highlight-color: transparent;
+  border-radius: 18px;
+}
+.look-preview:focus-visible { outline: 2px solid var(--brass-bright); outline-offset: 4px; }
+.look-preview .look-image { transform-origin: 50% 86%; }
+.look-preview:focus-visible .look-image { filter: drop-shadow(0 14px 22px rgba(201,164,99,.18)); }
 .look-item:hover .look-image { transform: none; }
 .look-image { transition: filter .25s ease; }
 .look-item:hover .look-image { filter: drop-shadow(0 14px 22px rgba(201,164,99,.18)); }
